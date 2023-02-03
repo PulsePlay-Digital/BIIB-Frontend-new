@@ -1,0 +1,226 @@
+<!-- <footer class="nga-footer">
+    <div class="nga-hint">
+        <div class="container">
+            <div class="row p-4">
+            </div>
+        </div>
+    </div>
+    <div class="container py-5 text-center text-lg-start">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+                <h2 class="h5">
+                    <img class="mb-1 me-1" [ngSrc]="logo" width="100" height="120" alt="Img">
+                   
+                </h2>
+                <hr class="text-white mb-4 mt-0 d-inline-block " style="width: 100px;">
+                <p>Web Application : Angular 15, Bootstrap 5 </p>
+                <p>Routing, Lazy Loading, SSR, PWA, SEO </p>
+                <ul class="list-inline" style="margin-top: 20px;">
+                    <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone mr-5"></i> <a
+                            href="tel:+91 (020) 6674 1235/36/1097, +91 9673338787">+91 (020) 6674 1235/36/1097, +91
+                            9673338787</a> </li>
+                    <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o mr-5"></i>
+                        <a href="mailto:admissions@sbup.edu.in">admissions@sbup.edu.in</a>
+                    </li>
+                    <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe mr-5"></i> <a
+                            href="https://www.biibpune.com/">www.biibpune.com</a> </li>
+                </ul>
+                <div>
+                    <a type="button" class="nga-btn-social nga-btn-linkedin" href="" target="_blank"
+                        aria-label="Linkedin ganatan">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a type="button" class="nga-btn-social nga-btn-twitter" href="https://twitter.com/dannyganatan"
+                        aria-label="Twitter ganatan" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a type="button" class="nga-btn-social nga-btn-github" href="https://github.com/ganatan"
+                        aria-label="Github ganatan">
+                        <i class="fab fa-github"></i></a>
+                    <a type="button" class="nga-btn-social nga-btn-gitlab" href="https://gitlab.com/ganatan"
+                        aria-label="Gitlab ganatan">
+                        <i class="fab fa-gitlab"></i></a>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-7">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-lg-3 mb-3"
+                        *ngFor="let item of menu; index as i;">
+                        <h2 class="h5">{{item?.name}}</h2>
+                        <hr class="text-white mt-0 d-inline-block" style="width: 70px;">
+                        <ul class="list-unstyled" *ngFor="let submenu of item?.children">
+                            <li class="mb-2"><a routerLink="{{submenu?.url}}">{{submenu?.name}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-3 text-center" style="background-color: black;">
+        <div class="container">
+            <a href="#"> Copyright © 2023. All Rights Reserved</a>
+        </div>
+    </div>
+</footer> -->
+
+<footer class="">
+    <div class="container">
+        <div class="row py-xl-4 py-lg-4">
+            <div class="col-xl-3 col-lg-3 col-md-4 d-flex flex-row align-items-center my-2">
+                <img class=" me-3" [ngSrc]="logo" width="74" height="94" alt="Img">
+                <div class="border-end border-2 border-light h-100"></div>
+                <img class="ms-3" ngSrc="./assets/imgs/unilogo.png" width="94" height="94" alt="Img">
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-5 my-2">
+                <ul class="list-unstyled mb-0 address-section">
+                    <li>
+                        <a class="lh-lg fs-6" role="button"><i class="fa fa-phone me-3" aria-hidden="true"></i>+91 (020)
+                            6674
+                            1235/36/1097, +91 9673338787</a>
+                    </li>
+                    <li>
+                        <a class="lh-lg fs-6" role="button"><i class="fa fa-envelope me-3"
+                                aria-hidden="true"></i>admissions@sbup.edu.in</a>
+                    </li>
+                    <li>
+                        <a class="lh-lg fs-6" role="button"><i class="fas fa-globe me-3"></i>www.biibpune.com</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-3 email-subscribe my-2">
+                <h3 class="text-uppercase fw-bold text-white mb-2 subscribe_text">subscribe our newsletter here</h3>
+                <div class="input-group border border-light border-2">
+                    <input type="text" class="form-control rounded-0 border-0 bg-transparent shadow-none"
+                        placeholder="Enter mail address" aria-label="Enter mail address"
+                        aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <a class="btn border-0 rounded-0 bg-transparent" type="button">
+                            <i class="fas fa-paper-plane email"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-top border-2"></div>
+    <div class="container">
+        <div class="footerMenu py-xl-5 py-lg-5 py-md-3 py-2">
+            <div class="mb-2">
+                <h4 class="mb-2 text-white text-uppercase fw-bold">Students & Alumni</h4>
+                <div class="row mb-2">
+                    <div class="col-10">
+                      <hr>
+                    </div>
+                </div>
+                <ul class="list-unstyled mb-0">
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Students Council</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Endorsement Certificate</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Alumni Website</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Alumni On Facebook</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Success Stories</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Endorsement Certificate</a></li>
+                </ul>
+            </div>
+            <div class="mb-2">
+                <h4 class="mb-2 text-white text-uppercase fw-bold">Placements</h4>
+                <div class="row mb-2">
+                    <div class="col-10">
+                      <hr>
+                    </div>
+                </div>
+                <ul class="list-unstyled mb-0">
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Placements 2018-20</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Our Recruiters</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>BIIB Placements Procedure</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Alumni On Facebook</a></li>
+                </ul>
+            </div>
+            <div class="mb-2">
+                <h4 class="mb-2 text-white text-uppercase fw-bold">courses</h4>
+                <div class="row mb-2">
+                    <div class="col-10">
+                      <hr>
+                    </div>
+                </div>
+                <ul class="list-unstyled mb-0">
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Ph.D.</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>MBA Marketing</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>MBA Financial Management</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>MBA International Business</a></li>
+                </ul>
+            </div>
+            <div class="mb-2">
+                <h4 class="mb-2 text-white text-uppercase fw-bold">new admissions</h4>
+                <div class="row mb-2">
+                    <div class="col-10">
+                      <hr>
+                    </div>
+                </div>
+                <ul class="list-unstyled mb-0">
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Apply Online</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Important Dates</a></li>
+                    <li class="nav-item d-flex align-items-end"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Important Contacts</a></li>
+                </ul>
+            </div>
+            <div class="mb-2">
+                <h4 class="mb-2 text-white text-uppercase fw-bold">campus</h4>
+                <div class="row mb-2">
+                    <div class="col-10">
+                      <hr>
+                    </div>
+                </div>
+                <ul class="list-unstyled mb-0">
+                    <li class="nav-item"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>New Campus</a></li>
+                    <li class="nav-item"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>360 Degrees Virtual Campus Tour</a></li>
+                    <li class="nav-item"><a routerLink="" class="p-0 ms-2"><i class="fas fa-book me-2"></i>Photo Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="border-top border-2"></div>
+    <div class="container copyright_section">
+        <div class="row justify-content-between align-items-center py-xxl-3 py-xl-3 py-lg-2 py-md-2 py-2">
+            <div class="col-xl-3 py-2">
+                <p class="mb-0">Copyright © 2023. All Rights Reserved</p>
+            </div>
+            <div class="col-xl-3 py-2">
+                <ul class="list-unstyled d-flex mb-0 justify-content-center">
+                    <li class="ms-3">
+                        <a class="link-dark" href="#">
+                            <!-- <i class="fa fa-facebook" aria-hidden="true"></i> -->
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-dark" href="#">
+                            <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-dark" href="#">
+                            <!-- <i class="fa fa-linkedin-square" aria-hidden="true"></i> -->
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-dark" href="#">
+                            <i class="fab fa-twitter"></i>
+                            <!-- <i class="fa fa-twitter" aria-hidden="true"></i> -->
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-dark" href="#">
+                            <i class="fab fa-whatsapp"></i>
+                            <!-- <i class="fa fa-whatsapp" aria-hidden="true"></i> -->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-4 text-xl-end text-lg-end text-center">
+                <p class="mb-0">Website designed and developed by <a class="cmpName" href="https://pulseplaydigital.com/" target="_blank">PulsePlay Digital</a><br>
+                    with  <span style="font-size:24px;color:#EA8833;line-height: 0;">&hearts;</span> from Dharamshala, Himachal Pradesh, India</p>
+            </div>
+        </div>
+    </div>
+</footer>

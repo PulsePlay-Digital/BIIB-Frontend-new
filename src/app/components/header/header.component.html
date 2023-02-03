@@ -1,0 +1,160 @@
+ <!-- <header class="navbar navbar-expand-lg navbar-dark fixed-top nga-navbar">
+    <nav class="container" aria-label="Main navigation">
+        <a routerLink="/" class="navbar-brand" alt="Accueil" aria-label="Ganatan">
+            <img [ngSrc]="logo" width="80" height="100" alt="Img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item" *ngFor="let item of menu; index as i;">
+                    <a class="nav-link nga-nav-link" aria-current="page" routerLink="{{item?.url}}">{{ item?.name }}
+                    </a>
+                    <ng-container *ngIf="item?.children !== undefined;">
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li *ngFor="let submenu of item?.children; index as i;">
+                                <a class="dropdown-item" routerLink="{{submenu?.url}}">{{submenu?.name}}
+                                </a>
+                            </li>
+                        </ul>
+                    </ng-container>
+                </li>
+            </ul>
+ 
+            <form class="d-flex">
+                <button type="button" class="btn btn-sm nga-btn-navbar me-2" routerLink="/signup"><i
+            class="fas fa-user-plus me-2"></i>Sign up</button>
+                <button type="button" class="btn btn-sm btn-outline-light me-2" routerLink="/login"><i
+            class="fas fa-sign-in-alt me-2"></i>Login</button>
+            </form>
+            <a routerLink="/" class="navbar-brand" alt="Accueil" aria-label="Ganatan">
+                <img src="./assets/imgs/sribalaji-society-logo.png" srcset="./assets/imgs/sribalaji-society-logo.png,
+        ./assets/imgs/sribalaji-society-logo.png" width="100" height="122px" alt="Ganatan Logo">
+           
+            </a>
+        </div>
+    </nav>
+</header>
+<script>
+    let dropdowns = document.querySelectorAll('.dropdown-toggle')
+    dropdowns.forEach((dd) => {
+        dd.addEventListener('mouseover', function(e) {
+            var el = this.nextElementSibling
+            el.style.display = el.style.display === 'block' ? 'none' : 'block'
+        })
+        dd.addEventListener('mouseout', function(e) {
+            var el = this.nextElementSibling
+            el.style.display = el.style.display === 'block' ? 'block' : 'none'
+        })
+    })
+</script>  -->
+
+<nav class="navbar fixed-top py-0" aria-label="Light offcanvas navbar">
+    <div class="container-fluid h-100 pe-0">
+      <a routerLink="/" class="navbar-brand flex-grow-0">
+        <img [ngSrc]="logo" width="74" height="94" alt="logo">
+      </a>
+      <div class="row flex-grow-1 m-0 d-xl-flex d-lg-flex d-none justify-content-between">
+        <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-8 px-lg-0">
+            <p class="text-uppercase fw-bold institueName text-center lh-base text-center my-1">Balaji Institute of International Business (BIIB)</p>
+            <p class="fs-6 text-center mb-0">A constituent institute of Sri Balaji University, Pune (SBUP),<br>Courses Approved By AICTE, Ministry of HRD, Govt. of India</p>
+        </div>
+        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 text-center">
+            <a routerLink="/" class="navbar-brand flex-grow-0 text-center me-lg-0">
+                <img [ngSrc]="universityLogo" width="200" height="86" alt="uni-logo">
+            </a>
+        </div>
+        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 d-xxl-flex d-none align-items-center justify-content-center">
+            <button type="button" class="btn btn-secondary btn-contact btn-lg text-uppercase w-100 border-0 fw-normal">
+                <i class="fas fa-phone-alt me-1"></i> Contact Us
+            </button>
+        </div>
+      </div>
+      <a class="navbar-toggler h-100 border-0 py-0 pe-0 flex-grow-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight">
+        <img src="./assets/imgs/hamburger.png" class="h-100">
+      </a>
+      <div class="offcanvas offcanvas-end menuNav" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
+        <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+          <ul class="navbar-nav w-100">
+            <li class="nav-item text-center">
+              <a class="nav-link text-center fw-bold text-uppercase text-white" role="button" tabindex="0">Home</a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link text-center fw-bold text-uppercase text-white" role="button" tabindex="0">About</a>
+            </li>
+            <li class="nav-item text-center">
+                <a class="nav-link text-center fw-bold text-uppercase text-white" role="button" tabindex="0">Admissions</a>
+              </li>
+            <li class="nav-item text-center">
+                <a class="nav-link text-center fw-bold text-uppercase text-white" role="button" tabindex="0">Academics</a>
+            </li>
+            <li class="nav-item text-center">
+                <a class="nav-link text-center fw-bold text-uppercase text-white" role="button" tabindex="0">Industry Interface</a>
+            </li>
+            <li class="nav-item text-center">
+                <a class="nav-link text-center fw-bold text-uppercase text-white" role="button" tabindex="0">placements</a>
+            </li>
+            <li class="nav-item text-center">
+                <a class="nav-link text-center fw-bold text-uppercase text-white" role="button" tabindex="0">students</a>
+            </li>
+            <li class="nav-item text-center">
+                <a class="nav-link text-center fw-bold text-uppercase text-white" role="button" tabindex="0">alumni</a>
+            </li>
+            <li class="nav-item text-center">
+                <a class="nav-link text-center fw-bold text-uppercase text-white" role="button" tabindex="0">contact</a>
+            </li>
+            <li class="nav-item text-center">
+                <a class="nav-link" data-bs-dismiss="offcanvas">
+                    <i class="fa fa-times text-white fs-3" aria-hidden="true" role="button" tabindex="0"></i>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+<!-- 
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top nga-navbar">
+    <div class="container">
+        <a routerLink="/" class="navbar-brand" alt="Accueil" aria-label="Ganatan">
+            <img [ngSrc]="logo" width="80" height="100" alt="Img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main_nav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item dropdown has-megamenu" *ngFor="let item of menu; index as i;">
+                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="{{item?.url}}">{{ item?.name }}
+                    </a>
+                    <ng-container *ngIf="item?.children">
+                        <div class="dropdown-menu megamenu p-3 p-md-4" role="menu">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-2" *ngFor="let submenu of item?.children; index as i;">
+                                    <h4 class="fw-bold mb-1">{{submenu?.subtitle}}</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item p-0" *ngFor="let innerMenu of submenu?.children; index as i;">
+                                            <a class="dropdown-item p-2 text-capitalize text-wrap" routerLink="{{innerMenu?.url}}">{{innerMenu?.name}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#"> Menu item </a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"> Dropdown right </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                      <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+                      <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> -->

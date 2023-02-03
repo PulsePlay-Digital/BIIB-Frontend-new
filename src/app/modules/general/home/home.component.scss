@@ -1,0 +1,864 @@
+hr {
+  margin: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #37255F;
+  border: 0;
+  opacity: 1;
+  border-radius: 20px;
+}
+
+hr:after {
+  content: "";
+  display: block;
+  border-bottom: 5px solid #EA8833;
+  max-width: 30%;
+  border-radius: 20px;
+}
+
+.homePage {
+
+  /** Hero Section CSS **/
+  .bannerImg {
+    background: url(./../../../../assets/imgs/homeImages/heroBanner.png);
+    background-repeat: var(--background-no-repeat);
+    height: 80vh;
+    max-height: 100%;
+    background-size: cover;
+    position: var(--position-relative);
+    background-position: center;
+
+    .layer {
+      background: linear-gradient(90.15deg, rgba(0, 0, 0, 0.3) 0.13%, rgba(0, 0, 0, 0) 92.48%);
+    }
+
+    .heroBanner {
+      color: var(--bs-white);
+
+      .muted-text {
+        font-size: var(--font-16);
+        line-height: 24px;
+      }
+
+      .sectionText {
+        font-size: var(--font-40);
+        font-weight: var(--font-600);
+        line-height: 42px;
+      }
+
+      p {
+        font-size: 18px;
+        // font-family: sans-serif;
+      }
+    }
+
+    .heroBtn {
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+
+      .btn {
+        background-color: var(--primary-blue);
+        color: var(--bs-white);
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: var(--primary-orange);
+        overflow: hidden;
+        width: 0;
+        height: 100%;
+        transition: .5s ease;
+
+        .icon {
+          color: var(--bs-white);
+          font-size: var(--font-18);
+          position: var(--position-absolute);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
+      }
+    }
+
+    .heroBtn:hover .overlay {
+      width: 100%;
+    }
+  }
+
+  /** Hero Section CSS End **/
+
+  /** About Us Section CSS **/
+  .aboutSection {
+    .aboutImg {
+      .outerImg {
+        width: 100%;
+        height: 494px;
+      }
+
+      .layerSection {
+        position: absolute;
+        top: 22px;
+        left: -26px;
+        width: 74px;
+        height: 451px;
+        background: var(--primary-blue);
+      }
+
+      .upperImg {
+        position: absolute;
+        top: 22px;
+        left: calc(100% - 142%);
+        width: 100%;
+        height: 210px;
+
+        img {
+          margin-top: 10px;
+        }
+      }
+
+      .bottomImg {
+        position: absolute;
+        bottom: 33px;
+        left: calc(100% - 142%);
+        width: 100%;
+        height: 210px;
+
+        img {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  /** About Us Section CSS End **/
+
+  /** Thriving & KPI Section CSS **/
+
+  .thrivingSection {
+    .card {
+      background-color: var(--primary-blue);
+      color: var(--bs-white);
+
+      i {
+        rotate: 180deg;
+        font-size: 72px;
+      }
+
+      .thrivingHeading {
+        font-size: var(--font-48);
+        line-height: 56px;
+      }
+
+      .thrivingHR {
+        border: 0;
+        opacity: 1;
+        height: auto;
+        border-radius: 20px;
+        background-color: transparent;
+      }
+
+      .thrivingHR::after {
+        content: "";
+        display: block;
+        border-bottom: 6px solid #EA8833;
+        max-width: 40px;
+        border-radius: 20px;
+        margin: auto;
+      }
+
+      .content {
+        font-size: var(--font-18);
+        text-transform: uppercase;
+      }
+
+      .description {
+        font-size: var(--font-15);
+      }
+    }
+
+    .card:hover {
+      background-color: var(--primary-orange);
+      scale: 1.1;
+      transition: all 500ms ease;
+    }
+
+    .card:hover .thrivingHR::after {
+      border-bottom: 6px solid var(--primary-blue);
+      max-width: 80px;
+      transition: all 800ms ease;
+    }
+
+    .card:hover i {
+      color: var(--primary-blue);
+    }
+  }
+
+  .kpiSVG {
+    background-image: url(./../../../../assets/imgs/homeImages/kpiCircleDots.png);
+    height: 25%;
+    width: 300px;
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .KPI-section {
+    .kpiForm {
+      background-image: url(./../../../../assets/imgs/homeImages/kpiBlogBg.png);
+      height: var(--height-100);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .btn-kpi {
+        background-color: var(--primary-blue);
+        width: var(--width-100);
+        color: var(--bs-white);
+      }
+
+      .btn-kpi:hover {
+        background-color: var(--primary-orange);
+      }
+    }
+
+    .kpiBlog {
+      background-image: url(./../../../../assets/imgs/homeImages/kpiBg.png);
+      height: var(--height-100);
+      background-repeat: no-repeat;
+      background-size: cover;
+      .counter {
+        display: var(--display-flex);
+        align-items: var(--align-center);
+        height: var(--height-100);
+        .column {
+          flex: 50%;
+          .info{
+            span i{
+              font-size: 32px;
+            }
+            h4 {
+              font-size: 36px;
+            }
+            p {
+              font-size: 18px;
+            }
+          }
+        }
+        
+        /* On screens that are 992px wide or less, go from four columns to two columns */
+        @media screen and (max-width: 992px) {
+          .column {
+            flex: 50%;
+          }
+        }
+        
+        /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .row {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+
+  /** Thriving & KPI section CSS End **/
+
+  /** Why BIIB CSS **/
+  .whyBIIB {
+    .card {
+      .card-body {
+        i {
+          color: var(--primary-orange);
+          font-size: 52px;
+        }
+
+        .WhyHeading {
+          color: var(--primary-blue);
+        }
+
+        .description {
+          font-size: var(--font-14);
+        }
+      }
+
+      :hover {
+        background: rgba(234, 136, 51, 0.95);
+      }
+
+      :hover .whyHR::after {
+        border-bottom: 5px solid var(--bs-white);
+        max-width: 24%;
+        transition: var(--transition);
+      }
+
+      :hover i,
+      :hover .description {
+        color: var(--bs-white);
+      }
+    }
+
+    .WhyHeading {
+      font-size: var(--font-22);
+    }
+
+    .whyHR {
+      border: 0;
+      opacity: 1;
+      height: auto;
+      border-radius: 20px;
+      background-color: transparent;
+    }
+
+    .whyHR::after {
+      max-width: 13%;
+      margin: auto;
+    }
+  }
+
+  /** Why BIIB section CSS End **/
+
+  /** Query Section CSS **/
+  .querySection {
+    background-color: #EDF6FF;
+
+    .wrapperLeft {
+      content: url(./../../../../assets/imgs/homeImages/leftQuestion.png);
+      position: absolute;
+      left: calc(100% - 93%);
+    }
+
+    .wrapperRight {
+      content: url(./../../../../assets/imgs/homeImages/rightQuestion.png);
+      position: absolute;
+      right: calc(100% - 93%);
+    }
+
+    .question {
+      font-size: var(--font-24);
+      color: var(--primary-orange);
+    }
+
+    h4 {
+      font-size: 36px;
+    }
+
+    .or {
+      font-size: 36px;
+      color: var(--primary-orange);
+    }
+
+    .btn-contact {
+      border: 1px solid var(--primary-blue);
+      color: var(--bs-white);
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: var(--primary-blue);
+    }
+
+    .btn-contact:hover {
+      border: 1px solid var(--primary-blue);
+      background-color: var(--bs-white);
+      color: var(--primary-blue);
+      transition: var(--transition);
+
+      i {
+        animation: slide 1s ease 0s 1 normal none;
+      }
+    }
+  }
+
+  /** Query Section CSS End**/
+
+  /** Courses Section CSS **/
+  .courses {
+    .coursesImg {
+      img {
+        height: 190px;
+      }
+
+      .seats {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        p {
+          font-size: var(--font-14);
+          padding: 5px;
+          background: var(--primary-orange);
+          border-radius: 10px 10px 0px 0px;
+        }
+      }
+    }
+
+    .card-body {
+      .courseTitle {
+        color: var(--primary-blue);
+        font-size: var(--font-18);
+        height: 54px;
+      }
+
+      p {
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+        overflow: hidden;
+      }
+    }
+
+    .card-footer {
+      .btn-course {
+        border: 1px solid var(--primary-blue);
+        color: var(--primary-blue);
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .btn-course:hover {
+        border: 1px solid var(--primary-blue);
+        background-color: var(--primary-blue);
+        color: var(--bs-white);
+        transition: var(--transition);
+      }
+
+      .btn-course:hover i {
+        animation: slide 1s ease 0s 1 normal none;
+      }
+    }
+  }
+
+  /** Courses Section CSS End **/
+
+  /** Testimonial Section Css **/
+  .testimonial {
+    .testimonialLeft {
+      height: 100%;
+
+      img {
+        height: 520px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .testimonialRight {
+      position: relative;
+      height: 100%;
+      width: 100%;
+
+      img {
+        height: 520px;
+        width: 100%;
+      }
+
+      .contentdiv {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translate(-12%, -50%);
+        width: 100%;
+
+        .card {
+          .card-body {
+            .card-heading {
+              p {
+                font-size: 16px;
+              }
+
+              h3 {
+                font-size: 36px;
+                color: var(--primary-blue);
+              }
+            }
+
+            .card-description {
+              p {
+                display: -webkit-box !important;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                white-space: normal;
+                overflow: hidden;
+                height: 120px;
+              }
+            }
+
+            .studentInfo {
+              .description {
+                img {
+                  width: 48px;
+                  height: 48px;
+                }
+
+                .user {
+
+                  p,
+                  span {
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .testimonialCarousel {
+          .slick-dots {
+            bottom: 0px;
+            display: flex !important;
+            justify-content: end !important;
+          }
+        }
+      }
+    }
+  }
+
+  /** Testimonial Section Css End **/
+  /** News Section CSS **/
+  .news {
+    .newImg {
+      .calender {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 38px;
+        background: rgba(234, 136, 51, 0.9);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+
+        p {
+          font-size: var(--font-14);
+        }
+      }
+    }
+
+    .card-body {
+      .newsTitle {
+        font-size: var(--font-24);
+        color: var(--primary-blue);
+        height: 68px;
+        overflow: hidden;
+      }
+    }
+
+    .btn-news {
+      border: 1px solid var(--primary-blue);
+      color: var(--primary-blue);
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .btn-news:hover {
+      border: 1px solid var(--primary-blue);
+      background-color: var(--primary-blue);
+      color: var(--bs-white);
+      transition: var(--transition);
+    }
+
+    .btn-news:hover i {
+      animation: slide 1s ease 0s 1 normal none;
+    }
+
+    .btn-blogs {
+      border: 1px solid var(--primary-blue);
+      color: var(--bs-white);
+      background: var(--primary-blue);
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .btn-blogs:hover {
+      border: 1px solid var(--primary-blue);
+      background-color: var(--primary-blue);
+      color: var(--bs-white);
+      transition: var(--transition);
+    }
+
+    .btn-blogs:hover i {
+      animation: slide 1s ease 0s 1 normal none;
+    }
+  }
+
+  /** Top Brass CSS End **/
+
+  /** Top Brass CSS **/
+  .topBrass {
+    background: rgba(165, 165, 165, 0.2);
+
+    .card-footer {
+      background-color: var(--primary-orange);
+
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+      }
+    }
+
+    .feature_banner {
+      position: var(--position-relative);
+      height: var(--height-100);
+      width: var(--width-100);
+
+      .featured_hide {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--primary-orange);
+        color: var(--bs-white);
+        visibility: hidden;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        height: 0px;
+
+        h6 {
+          color: var(--primary-blue);
+          font-size: var(--font-16);
+        }
+
+        p {
+          text-transform: var(--text-uppercase);
+          font-weight: var(--font-600);
+          font-size: var(--font-14);
+        }
+
+        hr:after {
+          border-bottom: 5px solid var(--primary-blue);
+        }
+      }
+    }
+
+    .feature_banner:hover .featured_hide {
+      visibility: visible;
+      opacity: 1;
+      height: 100%;
+      top: initial;
+      bottom: 0;
+      transition: height .4s;
+      overflow: hidden;
+      padding: 10px;
+      position: absolute;
+      background: var(--primary-orange);
+      color: var(--bs-white);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  /** Top Brass CSS End**/
+
+  /** Campus Gallery Section CSS **/
+  .campusGallery {
+    .gal {
+      -webkit-column-count: 3;
+      /* Chrome, Safari, Opera */
+      -moz-column-count: 3;
+      /* Firefox */
+      column-count: 3;
+    }
+
+    .gal img {
+      width: 100%;
+      padding: 7px 0;
+    }
+
+    @media screen and (min-width: 300px) and (max-width: 574px) {
+      .gal {
+        -webkit-column-count: 1;
+        /* Chrome, Safari, Opera */
+        -moz-column-count: 1;
+        /* Firefox */
+        column-count: 1;
+      }
+    }
+
+@media screen and (min-width: 575px) and (max-width: 767px) {
+      .gal {
+        -webkit-column-count: 2;
+        /* Chrome, Safari, Opera */
+        -moz-column-count: 2;
+        /* Firefox */
+        column-count: 2;
+      }
+    }
+
+    .btn-blogs {
+      border: 1px solid var(--primary-blue);
+      color: var(--bs-white);
+      background: var(--primary-blue);
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .btn-blogs:hover {
+      border: 1px solid var(--primary-blue);
+      background-color: var(--primary-blue);
+      color: var(--bs-white);
+      transition: var(--transition);
+    }
+
+    .btn-blogs:hover i {
+      animation: slide 1s ease 0s 1 normal none;
+    }
+  }
+
+  /** Campus Gallery Section CSS End **/
+
+  /** Partner Section CSS **/
+  .partnerLog {
+    background-color: #F2F2F2;
+  }
+  /** Partner Section CSS End **/
+}
+
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(6px);
+  }
+}
+@media only screen and (min-width: 300px) and (max-width: 574px){
+  .testimonial {
+    .testimonialLeft {
+      img {
+        height: 400px;
+      }
+    }
+
+    .testimonialRight {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      img {
+        height: 400px;
+        width: 100%;
+      }
+      .contentdiv {
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+
+        .card {
+          .card-body {
+            .card-heading {
+              p {
+                font-size: 16px;
+              }
+
+              h3 {
+                font-size: 28px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 575px) and (max-width: 767px){
+  .testimonial {
+    .testimonialLeft {
+      img {
+        height: 400px;
+      }
+    }
+
+    .testimonialRight {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      img {
+        height: 400px;
+        width: 100%;
+      }
+      .contentdiv {
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+
+        .card {
+          .card-body {
+            .card-heading {
+              p {
+                font-size: 16px;
+              }
+
+              h3 {
+                font-size: 28px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  .testimonial {
+    .testimonialLeft {
+      img {
+        height: 520px;
+      }
+    }
+    .testimonialRight {
+      img {
+        height: 520px;
+      }
+      .contentdiv {
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        .card {
+          .card-body {
+            .card-heading {
+              h3 {
+                font-size: 28px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 2400px) {
+  .aboutSection {
+    .aboutImg {
+      .upperImg {
+        left: calc(100% - 143%) !important;
+      }
+
+      .bottomImg {
+        left: calc(100% - 143%) !important;
+      }
+    }
+  }
+}

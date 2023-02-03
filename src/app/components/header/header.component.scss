@@ -1,0 +1,134 @@
+:host {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+
+  .navbar{
+    background-color: #ffff;
+    height: 108px;
+
+    .institueName {
+        color: var(--primary-orange);
+        font-size: var(--font-26);
+    }
+    .btn-contact {
+        background-color: var(--primary-blue);
+        border-radius: 5px;
+        i {
+            rotate: 90deg;
+        }
+    }
+    .btn-contact:hover {
+        background-color: var(--primary-orange);
+    }
+    .menuNav {
+        width: 100% !important;
+        background-color: #37255F;
+        .offcanvas-body {
+            .navbar-nav {
+                .nav-item {
+                    .nav-link {
+                        font-size: 1.5rem;
+                        line-height: 36px;
+                        display: inline-block;
+                    }
+                    .nav-link:hover, .nav-link:hover i{
+                        color: var(--primary-orange) !important;
+                    }
+                }
+            }
+        }
+    }
+  }
+  
+.nga-navbar {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 11px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 11px 10px 0 rgba(0, 0, 0, 0.12);
+    background-color: #09238d;
+
+    .nga-nav-link {
+        color: white;
+        border-top: 1px solid #09238d;
+        border-bottom: 1px solid #09238d;
+        font-weight: 500;
+    }
+
+    .nga-nav-link:hover {
+        color: yellow;
+        border-top: 1px solid yellow;
+        border-bottom: 1px solid yellow;
+    }
+
+    .nga-btn-navbar {
+        --bs-btn-color: #fff;
+        --bs-btn-bg: #1976d2;
+        --bs-btn-border-color: #1976d2;
+        --bs-btn-hover-color: #fff;
+        --bs-btn-hover-bg: #0b5ed7;
+        --bs-btn-hover-border-color: #0a58ca;
+    }
+
+    .navbar-nav li:hover>ul.dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu>.dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+    }
+
+    /* rotate caret on hover */
+    .dropdown-menu>li>a:hover:after {
+        text-decoration: underline;
+        transform: rotate(-90deg);
+    }
+}
+
+// .nga-logo {
+//     font-weight: 500;
+// }
+
+// .nga-logo:hover {
+//     color: rgba(255, 255, 255, 0.75);
+// }
+
+
+.navbar .megamenu {
+    padding: 1rem;
+}
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+    .navbar .has-megamenu {
+        position: static !important;
+    }
+
+    .navbar .megamenu {
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: auto;
+    }
+    .has-megamenu:hover>.dropdown-menu {
+        display: inline-block;
+    }
+}
+
+/* ============ desktop view .end// ============ */
+
+/* ============ mobile view ============ */
+@media(max-width: 991px) {
+
+    .navbar.fixed-top .navbar-collapse,
+    .navbar.sticky-top .navbar-collapse {
+        overflow-y: auto;
+        max-height: 90vh;
+        margin-top: 10px;
+    }
+}
