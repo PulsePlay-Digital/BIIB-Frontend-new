@@ -1,7 +1,7 @@
 {
-  "name": "BIIB-Frontend1",
-  "short_name": "BIIB-Frontend1",
-  "theme_color": "#1976d2",
+  "name": "BIIB-Frontend",
+  "short_name": "BIIB-Frontend",
+  "theme_color": "#37255F",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
