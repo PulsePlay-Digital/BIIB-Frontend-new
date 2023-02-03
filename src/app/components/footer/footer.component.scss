@@ -86,6 +86,9 @@ footer {
       }
     }
     .cmpName {
+      color: var(--bs-white);
+    }
+    .cmpName:hover {
       color: var(--primary-orange);
     }
   }

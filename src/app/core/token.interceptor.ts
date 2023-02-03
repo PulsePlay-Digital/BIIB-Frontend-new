@@ -21,7 +21,6 @@ export class TokenInterceptor implements HttpInterceptor {
     //   withCredentials: true,
     // });
     // return next.handle(request);
-
     const getToken: string | any = localStorage.getItem('token');
     let token = JSON.parse(getToken);
 
