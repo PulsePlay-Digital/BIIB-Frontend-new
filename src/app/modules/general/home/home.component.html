@@ -14,10 +14,9 @@
               <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-sm-5 col-6">
                 <!-- <a class="btn btn-hero text-uppercase w-100 lh-lg">Apply Now <span><i class="fa-solid fa-arrow-pointer"></i></span></a> -->
                 <div class="heroBtn">
-                  <a class="btn text-uppercase w-100 p-2 lh-lg">Apply Now <span><i
-                        class="fa-solid fa-arrow-pointer"></i></span></a>
+                  <a class="btn text-uppercase w-100 p-2 lh-lg">Apply Now <span><i class="fas fa-hand-pointer"></i></span></a>
                   <div class="overlay">
-                    <div class="icon"><i class="fa-solid fa-arrow-pointer"></i></div>
+                    <div class="icon"><i class="fas fa-hand-pointer"></i></div>
                   </div>
                 </div>
               </div>
@@ -80,7 +79,7 @@
         <div class="col-xl-4 col-lg-4 col-md-4 my-3">
           <div class="card text-center py-4">
             <div class="card-body py-0">
-              <i class="fa-solid fa-medal mb-2"></i>
+              <i class="fas fa-medal mb-2"></i>
               <h5 class="card-title text-uppercase thrivingHeading my-2 fw-bold">Top 11</h5>
               <hr class="thrivingHR">
             </div>
@@ -93,7 +92,7 @@
         <div class="col-xl-4 col-lg-4 col-md-4 my-3">
           <div class="card text-center py-4">
             <div class="card-body py-0">
-              <i class="fa-solid fa-medal mb-2"></i>
+              <i class="fas fa-medal mb-2"></i>
               <h5 class="card-title text-uppercase thrivingHeading my-2 fw-bold">top 3</h5>
               <hr class="thrivingHR">
             </div>
@@ -106,7 +105,7 @@
         <div class="col-xl-4 col-lg-4 col-md-4 my-3">
           <div class="card text-center py-4">
             <div class="card-body py-0">
-              <i class="fa-solid fa-medal mb-2"></i>
+              <i class="fas fa-medal mb-2"></i>
               <h5 class="card-title text-uppercase thrivingHeading my-2 fw-bold">top 2</h5>
               <hr class="thrivingHR">
             </div>
@@ -184,8 +183,7 @@
                     </div>
                     <div class="row justify-content-center">
                       <div class="col-xxl-4 col-xl-4 col-lg-4 text-center">
-                        <button class="btn btn-kpi btn-lg rounded-0 border-0 text-uppercase py-3 fs-5">Submit <i
-                            class="fa-solid fa-arrow-pointer ms-2"></i></button>
+                        <button class="btn btn-kpi btn-lg rounded-0 border-0 text-uppercase py-3 fs-5">Submit <i class="fas fa-hand-pointer"></i></button>
                       </div>
                     </div>
                   </form>
@@ -301,7 +299,6 @@
   <!-- Our Courses Section -->
   <div class="courses py-xl-4 py-lg-4">
     <div class="container">
-      <!--Heading-->
       <div class="row pb-xl-3 pb-lg-3 pb-md-2 justify-content-center py-xl-3">
         <div class="col-12 pb-2 text-center">
           <h4 class="main-heading text-uppercase fw-bold">OUR Courses</h4>
@@ -425,7 +422,7 @@
                   </div>
                   <div class="col-xxl-4 col-xl-5 col-lg-6">
                     <p class="text-uppercase mb-0 text-white">
-                      <i class="fas fa-calendar-alt text-white me-2"></i> {{item?.published_at }}
+                      <i class="fas fa-calendar-alt text-white me-2"></i> {{item?.published_at | date: 'MMM-dd-yyyy' }}
                     </p>
                   </div>
                 </div>
@@ -503,7 +500,6 @@
   <!-- Campus Gallery Section -->
   <div class="campusGallery">
     <div class="container">
-      <!--Heading-->
       <div class="row justify-content-center my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3">
         <div class="col-12 pb-2 text-center">
           <h4 class="main-heading text-uppercase fw-bold">CAMPUS GALLERY</h4>
