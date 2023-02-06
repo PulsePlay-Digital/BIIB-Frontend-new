@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from './../../../services/data.service';
 import { environment } from '../../../../environments/environment';
 import { SeoService } from '../../../services/seo/seo.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TokenInterceptor } from 'src/app/core/token.interceptor';
+import { NotificationService } from 'src/app/services/notification.service';
+import { Gallery } from 'ng-gallery';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +14,20 @@ import { SeoService } from '../../../services/seo/seo.service';
 })
 export class HomeComponent implements OnInit{
   model: any;
+  allHomeData: any;
+  imgPath = environment?.imgPath;
+  queryForm: FormGroup | any;
+  submitted: boolean = false;
+  loading: boolean = false;
+  kpis: any;
 
-  constructor(private seoService: SeoService, private dataService: DataService) {
+  constructor(
+    private seoService: SeoService, 
+    private dataService: DataService, 
+    private fb: FormBuilder,
+    private notification: NotificationService,
+    private gallery: Gallery
+    ) {
     const content =
       'It applies Routing, Lazy loading and Progressive Web App (PWA)';
 
@@ -59,21 +75,6 @@ export class HomeComponent implements OnInit{
       }
     ]
   };
-
-  testimonial = [
-    {
-      id: 1, url: "./../../../../assets/imgs/homeImages/leadership01.png", name: "Soumik Das", batch:"2019-21",
-      title: 'Students and Leaders Opinions', description: 'There’s a Chinese Proverb which goes, “Be not afraid of growing slowly, be afraid of only standing still.” With this in mind I came to Sri Balaji University. Hailing from the town of Jamshedpur, I was accompanied by my childhood friends to SBU to explore myself, came here not only for studies but for learning. According to me, a manager must be ready for anything that comes in his way and should have a practical solution for each problem in his path'
-    },
-    {
-      id: 2, url: "./../../../../assets/imgs/homeImages/leadership01.png", name: "Ram Charan", batch:"2020-22",
-      title: 'Students and Leaders Opinions', description: 'There’s a Chinese Proverb which goes, “Be not afraid of growing slowly, be afraid of only standing still.” With this in mind I came to Sri Balaji University. Hailing from the town of Jamshedpur, I was accompanied by my childhood friends to SBU to explore myself, came here not only for studies but for learning. According to me, a manager must be ready for anything that comes in his way and should have a practical solution for each problem in his path'
-    },
-    {
-      id: 3, url: "./../../../../assets/imgs/homeImages/leadership01.png", name: "Subash Bose", batch:"2019-21",
-      title: 'Students and Leaders Opinions', description: 'Col Balasubramanian was the first Indian to be honoured as the Indian Army’s Honorary Colonel by the President for his pioneering work in management education.'
-    },
-  ]
   testimonialConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -86,16 +87,6 @@ export class HomeComponent implements OnInit{
     autoplaySpeed: 2500
   };
   
-  campusGallery = [
-    {id:1, url:"https://preview.ibb.co/i0PmHk/1.jpg"},
-    {id:2, url:"https://preview.ibb.co/mWpE3Q/2.jpg"},
-    {id:3, url:"https://preview.ibb.co/i0PmHk/1.jpg"},
-    {id:4, url:"https://preview.ibb.co/mysOxk/3.jpg"},
-    {id:5, url:"https://preview.ibb.co/i0PmHk/1.jpg"},
-    {id:6, url:"https://preview.ibb.co/mWpE3Q/2.jpg"},
-    {id:7, url:"https://preview.ibb.co/i0PmHk/1.jpg"}
-  ];
-
   partnerConfig = {
     slidesToShow: 6,
     slidesToScroll: 1,
@@ -131,20 +122,57 @@ export class HomeComponent implements OnInit{
     ]
   };
 
-  allHomeData: any;
-  imgPath = environment?.imgPath;
   async ngOnInit () {
+    this.buildQueryForm(); 
     this.getAllData();
+  }
+
+  buildQueryForm() {
+    this.queryForm = this.fb.group({
+      id: [""],
+      name: ["", Validators.required],
+      email: ["", [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$")]],
+      phone: ["", [Validators.required, Validators.minLength(10), Validators.maxLength(16)]],
+      dob: ["", Validators.required],
+      course: ["", Validators.required]
+    })
+  }
+
+  get q() {
+    return this.queryForm.controls;
   }
 
   /**
    * Function to Get all common data
    */
   async getAllData() {
+    this.loading = true;
     let action: string = "homePage";
     await this.dataService.getData(action).subscribe((res: any) => {
       this.allHomeData = res?.data;
+      this.kpis = this.allHomeData?.Kpi;
+      console.log(this.kpis)
+      this.loading = false;
       console.log(this.allHomeData)
     })
+  }
+
+  /**
+   * Function to Enquiry Courses
+   */
+  async onSubmit() {
+    this.submitted = true;
+    if(this.queryForm.invalid) {
+      return;
+    } else {
+      let action = "enquiries";
+      await this.dataService.postData(action, this.queryForm?.value).subscribe((res: any) => {
+        if(res?.status == 200) {
+          this.notification.openSuccessAlert(res?.message);
+        }
+      }, error => {
+        this.notification.openErrorAlert(error);
+      })
+    }
   }
 }

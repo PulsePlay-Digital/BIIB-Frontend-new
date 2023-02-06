@@ -1,5 +1,6 @@
 @import "theme/variables.css";
-   
+@import '~@angular/cdk/overlay-prebuilt.css';
+
 body {
   font-family: Oswald !important;
   font-weight: normal !important;
@@ -15,6 +16,10 @@ body {
 ::selection {
   color: var(--primary-orange);
   background-color: var(--primary-blue);
+}
+
+.invalidText{
+  font-size: var(--font-14);
 }
 
 .btn-5 {
@@ -41,7 +46,9 @@ body {
 }
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
-
+.cdk-overlay-container {
+  z-index: 9999 !important;
+}
 app-home {
   .topBrassCarousel {
     .slick-dots{
@@ -122,6 +129,7 @@ app-home {
       }
     }
   }
+ 
 }
 
 @media screen and (min-width: 300px) and (max-width: 574px) {

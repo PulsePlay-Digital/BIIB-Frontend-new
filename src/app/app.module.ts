@@ -20,6 +20,7 @@ import { NotificationService } from './services/notification.service';
 import { ThemeService } from './services/themes/theme.service';
 import { SharedModule } from './shared/shared.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { LightboxModule } from 'ng-gallery/lightbox';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     SlickCarouselModule,
     MatModule,
     NgbModule,
+    LightboxModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

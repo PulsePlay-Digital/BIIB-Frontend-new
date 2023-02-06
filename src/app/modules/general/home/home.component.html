@@ -1,4 +1,5 @@
-<div class="homePage">
+<app-loader *ngIf="loading"></app-loader>
+<div class="homePage" *ngIf="!loading">
   <!-- Hero Section -->
   <div class="bannerImg">
     <div class="layer h-100 d-flex align-items-end">
@@ -76,7 +77,22 @@
             <hr>
           </div>
         </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 my-3">
+        
+        <div class="col-xl-4 col-lg-4 col-md-4 my-3" *ngFor="let award of allHomeData?.Award;index as i;">
+          <div class="card text-center py-4">
+            <div class="card-body py-0">
+              <i class="fas fa-medal mb-2"></i>
+              <h5 class="card-title text-uppercase thrivingHeading my-xl-2 my-lg-2 my-md-2 my-sm-2 my-0 fw-bold">{{award?.title}}</h5>
+              <hr class="thrivingHR">
+            </div>
+            <div class="card-footer border-0 bg-transparent">
+              <div [innerHtml]="award?.content" class="mt-2"></div>
+              <!-- <p class="card-text content my-3 lh-base">BIIB among top 11 B-schools in India</p> -->
+              <p class="card-text description lh-base">{{award?.issued_by}} {{award?.year}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-xl-4 col-lg-4 col-md-4 my-3">
           <div class="card text-center py-4">
             <div class="card-body py-0">
               <i class="fas fa-medal mb-2"></i>
@@ -114,7 +130,7 @@
               <p class="card-text description lh-base">Source : Times Of India B-School Survey (Feb-2021)</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -138,52 +154,74 @@
                       <hr class="bg-light w-75 m-auto">
                     </div>
                   </div>
-                  <form>
+                  <form [formGroup]="queryForm" (ngSubmit)="onSubmit()">
                     <div class="row py-xl-4 py-lg-4">
                       <div class="col-xl-6 my-2">
                         <div class="form-floating mb-lg-3 mb-md-3 mb-sm-2 mb-2">
-                          <input type="text" class="form-control text-white rounded-0 bg-transparent" id="floatingInput"
+                          <input type="text" formControlName="name" class="form-control text-white rounded-0 bg-transparent" id="floatingInput"
                             placeholder="Enter Name">
                           <label for="floatingInput" class="text-white">Name</label>
+                          <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2 rounded-0" *ngIf="(q.name.touched || submitted) && q.name.errors?.required">
+                            Name is required.
+                          </div>
                         </div>
                       </div>
                       <div class="col-xl-6 my-2">
                         <div class="form-floating mb-lg-3 mb-md-3 mb-sm-2 mb-2">
-                          <input type="email" class="form-control text-white rounded-0 bg-transparent"
+                          <input type="email" formControlName="email" class="form-control text-white rounded-0 bg-transparent"
                             id="floatingInput" placeholder="name@example.com">
                           <label for="floatingInput" class="text-white">Email</label>
+                          <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2 rounded-0" *ngIf="(q.email.touched || submitted) && q.email.errors?.required">
+                            Email is required.
+                          </div>
+                          <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2 rounded-0" *ngIf="q.email.dirty && q.email.errors?.pattern">
+                            Email format is incorrect.
+                          </div>
                         </div>
                       </div>
                       <div class="col-xl-6 my-2">
                         <div class="form-floating mb-lg-3 mb-md-3 mb-sm-2 mb-2">
-                          <input type="text" class="form-control text-white rounded-0 bg-transparent" id="floatingInput"
+                          <input type="text" formControlName="phone" class="form-control text-white rounded-0 bg-transparent" id="floatingInput"
                             placeholder="Enter Phone Number">
                           <label for="floatingInput" class="text-white">Phone</label>
+                          <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2 rounded-0" *ngIf="(q.phone.touched || submitted) && q.phone.errors?.required">
+                            Phone number is required.
+                          </div>
+                          <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2 rounded-0" *ngIf="(q.phone.touched || submitted) && q.phone.errors?.minlength">
+                            Minimum 10 number are allowed.
+                          </div>
+                          <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2 rounded-0" *ngIf="(q.phone.touched || submitted) && q.phone.errors?.maxlength">
+                            Maximum 16 number are allowed.
+                          </div>
                         </div>
                       </div>
                       <div class="col-xl-6 my-2">
                         <div class="form-floating mb-lg-3 mb-md-3 mb-sm-2 mb-2">
-                          <input type="date" class="form-control text-white rounded-0 bg-transparent" id="floatingInput"
+                          <input type="date" formControlName="dob" class="form-control text-white rounded-0 bg-transparent" id="floatingInput"
                             placeholder="DOB">
                           <label for="floatingInput" class="text-white">Date of birth</label>
+                          <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2 rounded-0" *ngIf="(q.dob.touched || submitted) && q.dob.errors?.required">
+                            DOB is required.
+                          </div>
                         </div>
                       </div>
                       <div class="col-xl-12 my-2">
                         <div class="form-floating mb-lg-3 mb-md-3 mb-sm-2 mb-2">
                           <select class="form-select text-white rounded-0 bg-transparent" id="floatingSelect"
-                            aria-label="Floating label select example">
-                            <option class="text-dark" selected>Select</option>
-                            <option class="text-dark" value="1">One</option>
-                            <option class="text-dark" value="2">Two</option>
-                            <option class="text-dark" value="3">Three</option>
+                            aria-label="Floating label select example" formControlName="course">
+                            <option class="text-dark" value="" selected>Select</option>
+                            <option class="text-dark" [value]="course?.id" *ngFor="let course of allHomeData?.Course; index as i;">{{course?.title}}</option>
                           </select>
                           <label for="floatingSelect" class="text-white">Choose course</label>
+                          <div class="invalidText text-start fw-bold mt-2 mb-0 alert alert-danger p-2 rounded-0" *ngIf="(q.course.touched || submitted) && q.course.errors?.required">
+                            Course is required.
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div class="row justify-content-center">
                       <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-4 col-5 text-center pt-xl-0 pt-lg-0 pt-md-0 pt-sm-2 pt-2">
-                        <button class="btn btn-kpi btn-lg rounded-0 border-0 text-uppercase py-3 fs-5">Submit <i class="fas fa-hand-pointer"></i></button>
+                        <button type="submit" class="btn btn-kpi btn-lg rounded-0 border-0 text-uppercase py-3 fs-5" >Submit <i class="fas fa-hand-pointer"></i></button>
                       </div>
                     </div>
                   </form>
@@ -200,28 +238,28 @@
                   <div class="column border-end border-bottom border-white">
                     <div class="info text-center py-xxl-5 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-3">
                       <span><i class="fas fa-book text-white mb-2"></i></span>
-                      <h4 class="fw-bold text-white lh-base">100%</h4>
+                      <h4 class="fw-bold text-white lh-base">{{kpis[0].title}}</h4>
                       <p class="text-uppercase text-white lh-base">PLACEMENT</p>
                     </div>
                   </div>
                   <div class="column border-bottom border-white">
                     <div class="info text-center py-xxl-5 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-3">
                       <span><i class="fas fa-search text-white mb-2"></i></span>
-                      <h4 class="fw-bold text-white lh-base">76+</h4>
+                      <h4 class="fw-bold text-white lh-base">{{kpis[1].title}}</h4>
                       <p class="text-uppercase text-white lh-base">RESEARCH</p>
                     </div>
                   </div>
                   <div class="column border-end border-white">
                     <div class="info text-center py-xxl-5 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-3">
                       <span><i class="fas fa-sack-dollar mb-2 text-white"></i></span>
-                      <h4 class="fw-bold text-white lh-base">18.50 L</h4>
+                      <h4 class="fw-bold text-white lh-base">{{kpis[2].title}}</h4>
                       <p class="text-uppercase text-white lh-base">HIGHEST PACKAGE</p>
                     </div>
                   </div>
                   <div class="column  border-white">
                     <div class="info text-center py-xxl-5 py-xl-4 py-lg-4 py-md-4 py-sm-4 py-3">
                       <span><i class="fas fa-graduation-cap mb-2 text-white"></i></span>
-                      <h4 class="fw-bold text-white lh-base">16K +</h4>
+                      <h4 class="fw-bold text-white lh-base">{{kpis[3].title}}</h4>
                       <p class="text-uppercase text-white lh-base">ALUMNI</p>
                     </div>
                   </div>
@@ -511,9 +549,15 @@
       <div class="row">
         <div class="col-xl-12">
           <div class="gal">
-            <ng-container *ngFor="let gal of campusGallery;index as i;">
-              <img [src]="gal?.url" alt="campus Img">
-            </ng-container>
+            <!-- <ng-container *ngFor="let gal of allHomeData?.Gallery;index as i;">
+              <img [src]="imgPath + gal?.featured_image" alt="campus Img">
+            </ng-container> -->
+            <div class="" gallerize>
+              <img *ngFor="let gal of allHomeData?.Gallery;index as i;"
+                   [src]="imgPath + gal?.featured_image"
+                   [attr.imageSrc]="imgPath + gal?.featured_image"
+                   [attr.thumbSrc]="imgPath + gal?.featured_image">
+            </div>
           </div>
         </div>
       </div>

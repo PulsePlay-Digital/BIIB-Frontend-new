@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class DataService {
   url: string;
+ 
   constructor(private http: HttpClient) {
     this.url = environment.apiUrl;
   }
@@ -38,7 +39,10 @@ export class DataService {
    * @returns 
    */
   postData(action: any, data: any) {
-    return this.http.post(`${this.url}/${action}`, data);
+    let headers = new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*');
+    return this.http.post(`${this.url}/api/${action}`, data);
   }
   /**
    * Function to update all data
@@ -47,7 +51,7 @@ export class DataService {
    * @returns 
    */
   update(action: any, data: any) {
-    return this.http.put(`${this.url}/${action}/${data?.id}`, data);
+    return this.http.put(`${this.url}/api/${action}/${data?.id}`, data);
   }
   /**
    * Function to delete all data by id

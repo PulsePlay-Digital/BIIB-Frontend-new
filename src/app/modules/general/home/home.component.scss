@@ -757,7 +757,8 @@ hr:after {
 @media only screen and (min-width: 300px) and (max-width: 574px) {
   .homePage{
     .bannerImg {
-        .heroBanner {
+      height: 300px;
+      .heroBanner {
         .sectionText {
           font-size: var(--font-28);
         }
@@ -852,6 +853,9 @@ hr:after {
 
 @media only screen and (min-width: 575px) and (max-width: 767px) {
   .homePage{
+    .bannerImg {
+      height: 450px;
+    }
     .aboutSection {
       .aboutImg {
         .outerImg {
