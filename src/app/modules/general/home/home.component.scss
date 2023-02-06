@@ -101,6 +101,7 @@ hr:after {
       .outerImg {
         width: 100%;
         height: 494px;
+        object-fit: cover;
       }
 
       .layerSection {
@@ -235,32 +236,37 @@ hr:after {
       height: var(--height-100);
       background-repeat: no-repeat;
       background-size: cover;
+
       .counter {
         display: var(--display-flex);
         align-items: var(--align-center);
         height: var(--height-100);
+
         .column {
           flex: 50%;
-          .info{
-            span i{
+
+          .info {
+            span i {
               font-size: 32px;
             }
+
             h4 {
               font-size: 36px;
             }
+
             p {
               font-size: 18px;
             }
           }
         }
-        
+
         /* On screens that are 992px wide or less, go from four columns to two columns */
         @media screen and (max-width: 992px) {
           .column {
             flex: 50%;
           }
         }
-        
+
         /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
         @media screen and (max-width: 600px) {
           .row {
@@ -376,7 +382,6 @@ hr:after {
       }
     }
   }
-
   /** Query Section CSS End**/
 
   /** Courses Section CSS **/
@@ -530,14 +535,14 @@ hr:after {
   .news {
     .newImg {
       .calender {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+        position: var(--position-absolute);
+        bottom: var(--bottom-0);
+        width: var(--width-100);
         height: 38px;
         background: rgba(234, 136, 51, 0.9);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        display: var(--display-flex);
+        flex-direction: var(--flex-dir-col);;
+        justify-content: var(--justify-content-center);
         height: auto;
 
         p {
@@ -551,7 +556,7 @@ hr:after {
         font-size: var(--font-24);
         color: var(--primary-blue);
         height: 68px;
-        overflow: hidden;
+        overflow: var(--overflow-H);
       }
     }
 
@@ -559,7 +564,7 @@ hr:after {
       border: 1px solid var(--primary-blue);
       color: var(--primary-blue);
       border-radius: 5px;
-      font-size: 16px;
+      font-size: var(--font-16);
     }
 
     .btn-news:hover {
@@ -603,9 +608,9 @@ hr:after {
       background-color: var(--primary-orange);
 
       p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: var(--display-flex);;
+        align-items: var(--align-center);;
+        justify-content: var(--justify-content-center);
         height: 48px;
       }
     }
@@ -614,22 +619,23 @@ hr:after {
       position: var(--position-relative);
       height: var(--height-100);
       width: var(--width-100);
+      cursor: var(--cursor-pointer);
 
       .featured_hide {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        position: var(--position-absolute);
+        top: var(--top-0);
+        bottom: var(--bottom-0);
+        left: var(--left-0);
+        right: var(--right-0);
         background: var(--primary-orange);
         color: var(--bs-white);
         visibility: hidden;
-        opacity: 0;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
+        opacity: var(--opacity-0);
+        display: var(--display-flex);
+        align-items: var(--align-center);
+        flex-direction: var(--flex-dir-col);
+        text-align: var(--text-C);
+        justify-content: var(--justify-content-center);
         height: 0px;
 
         h6 {
@@ -652,20 +658,20 @@ hr:after {
     .feature_banner:hover .featured_hide {
       visibility: visible;
       opacity: 1;
-      height: 100%;
+      height: var(--height-100);
       top: initial;
-      bottom: 0;
+      bottom: var(--bottom-0);
       transition: height .4s;
-      overflow: hidden;
+      overflow: var(--overflow-H);
       padding: 10px;
-      position: absolute;
+      position: var(--position-absolute);
       background: var(--primary-orange);
       color: var(--bs-white);
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      justify-content: center;
+      display: var(--display-flex);
+      align-items: var(--align-center);
+      flex-direction: var(--flex-dir-col);
+      text-align: var(--text-C);
+      justify-content: var(--justify-content-center);
     }
   }
 
@@ -696,7 +702,7 @@ hr:after {
       }
     }
 
-@media screen and (min-width: 575px) and (max-width: 767px) {
+    @media screen and (min-width: 575px) and (max-width: 767px) {
       .gal {
         -webkit-column-count: 2;
         /* Chrome, Safari, Opera */
@@ -732,6 +738,7 @@ hr:after {
   .partnerLog {
     background-color: #F2F2F2;
   }
+
   /** Partner Section CSS End **/
 }
 
@@ -746,73 +753,145 @@ hr:after {
     transform: translateX(6px);
   }
 }
-@media only screen and (min-width: 300px) and (max-width: 574px){
-  .testimonial {
-    .testimonialLeft {
-      img {
-        height: 400px;
+
+@media only screen and (min-width: 300px) and (max-width: 574px) {
+  .homePage{
+    .bannerImg {
+        .heroBanner {
+        .sectionText {
+          font-size: var(--font-28);
+        }
+      }
+    }
+    .aboutSection {
+      .aboutImg {
+        .outerImg {
+          height: 300px !important;
+          object-fit: cover;
+        }
       }
     }
 
-    .testimonialRight {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      img {
-        height: 400px;
+    .testimonial {
+      .testimonialLeft {
+        img {
+          height: 400px;
+        }
+      }
+      .testimonialRight {
+        position: relative;
+        height: 100%;
         width: 100%;
-      }
-      .contentdiv {
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-
-        .card {
-          .card-body {
-            .card-heading {
-              p {
-                font-size: 16px;
-              }
-
-              h3 {
-                font-size: 28px;
+        img {
+          height: 400px;
+          width: 100%;
+        }
+        .contentdiv {
+          left: 50% !important;
+          transform: translate(-50%, -50%) !important;
+          .card {
+            .card-body {
+              .card-heading {
+                p {
+                  font-size: 16px;
+                }
+                h3 {
+                  font-size: 28px;
+                }
               }
             }
           }
         }
       }
     }
+    .thrivingSection {
+      .card {
+        i {
+          font-size: 46px;
+        }
+        .thrivingHeading {
+          font-size: var(--font-28);
+        }
+      }
+      .card:hover {
+        scale: 1;
+      }
+    }
+    .querySection {
+      .wrapperLeft {
+        left: calc(100% - 98%);
+      }
+  
+      .wrapperRight {
+        right: calc(100% - 98%);
+      }
+  
+      .question {
+        font-size: var(--font-24);
+        color: var(--primary-orange);
+      }
+  
+      h4 {
+        font-size: 24px;
+      }
+  
+      .or {
+        font-size: 36px;
+        color: var(--primary-orange);
+      }
+    }
+    .news {  
+      .card-body {
+        .newsTitle {
+          height: auto;
+        }
+      }
+    }
   }
 }
 
-@media only screen and (min-width: 575px) and (max-width: 767px){
-  .testimonial {
-    .testimonialLeft {
-      img {
-        height: 400px;
+@media only screen and (min-width: 575px) and (max-width: 767px) {
+  .homePage{
+    .aboutSection {
+      .aboutImg {
+        .outerImg {
+          height: 300px !important;
+          object-fit: cover;
+        }
       }
     }
 
-    .testimonialRight {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      img {
-        height: 400px;
+    .testimonial {
+      .testimonialLeft {
+        img {
+          height: 400px;
+        }
+      }
+
+      .testimonialRight {
+        position: relative;
+        height: 100%;
         width: 100%;
-      }
-      .contentdiv {
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
 
-        .card {
-          .card-body {
-            .card-heading {
-              p {
-                font-size: 16px;
-              }
+        img {
+          height: 400px;
+          width: 100%;
+        }
 
-              h3 {
-                font-size: 28px;
+        .contentdiv {
+          left: 50% !important;
+          transform: translate(-50%, -50%) !important;
+
+          .card {
+            .card-body {
+              .card-heading {
+                p {
+                  font-size: 16px;
+                }
+
+                h3 {
+                  font-size: 28px;
+                }
               }
             }
           }
@@ -822,25 +901,40 @@ hr:after {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px){
-  .testimonial {
-    .testimonialLeft {
-      img {
-        height: 520px;
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .homePage {
+    .aboutSection {
+      .aboutImg {
+        .outerImg {
+          height: 300px !important;
+          object-fit: cover;
+        }
       }
     }
-    .testimonialRight {
-      img {
-        height: 520px;
+
+
+    .testimonial {
+      .testimonialLeft {
+        img {
+          height: 520px;
+        }
       }
-      .contentdiv {
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        .card {
-          .card-body {
-            .card-heading {
-              h3 {
-                font-size: 28px;
+
+      .testimonialRight {
+        img {
+          height: 520px;
+        }
+
+        .contentdiv {
+          left: 50% !important;
+          transform: translate(-50%, -50%) !important;
+
+          .card {
+            .card-body {
+              .card-heading {
+                h3 {
+                  font-size: 28px;
+                }
               }
             }
           }
@@ -849,15 +943,18 @@ hr:after {
     }
   }
 }
+
 @media only screen and (min-width: 1400px) and (max-width: 2400px) {
-  .aboutSection {
-    .aboutImg {
-      .upperImg {
-        left: calc(100% - 143%) !important;
-      }
+  .homePage {
+    .aboutSection {
+      .aboutImg {
+        .upperImg {
+          left: calc(100% - 143%) !important;
+        }
 
-      .bottomImg {
-        left: calc(100% - 143%) !important;
+        .bottomImg {
+          left: calc(100% - 143%) !important;
+        }
       }
     }
   }

@@ -36,7 +36,7 @@ body {
 }
 
 .main-heading {
-    font-size: var(--font-48) !important;
+    font-size: var(--font-48);
     color: var(--primary-blue);
 }
 /* Importing Bootstrap SCSS file. */
@@ -155,6 +155,9 @@ app-home {
       }
     }
   }
+  .main-heading {
+    font-size: var(--font-28);
+  }
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
