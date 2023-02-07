@@ -87,6 +87,7 @@ footer {
     }
     .cmpName {
       color: var(--bs-white);
+      white-space: nowrap;
     }
     .cmpName:hover {
       color: var(--primary-orange);
