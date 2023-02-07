@@ -86,7 +86,44 @@ export class HomeComponent implements OnInit{
     autoplay: true,
     autoplaySpeed: 2500
   };
-  
+
+  courseConfig = {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: "<div class='nav-btn next-slide'><i class='fas fa-chevron-right'></i></div>",
+    prevArrow: "<div class='nav-btn prev-slide'><i class='fas fa-chevron-left'></i></div>",
+    arrow: true,
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
   partnerConfig = {
     slidesToShow: 6,
     slidesToScroll: 1,

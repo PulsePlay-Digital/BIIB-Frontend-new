@@ -204,7 +204,7 @@ hr:after {
 
   .kpiSVG {
     background-image: url(./../../../../assets/imgs/homeImages/kpiCircleDots.png);
-    height: 25%;
+    height: 24%;
     width: 300px;
     position: absolute;
     background-repeat: no-repeat;
@@ -249,12 +249,11 @@ hr:after {
             span i {
               font-size: 32px;
             }
-
             h4 {
               font-size: 36px;
             }
-
-            p {
+            .description {
+              text-transform: uppercase;
               font-size: 18px;
             }
           }
