@@ -15,7 +15,7 @@ constructor(public http: HttpClient, private notify: NotificationService, privat
 
 }
   logo: string = './assets/imgs/biib-logo.png';
-  universityLogo: string = "./../../../assets/imgs/uni_logo.png";
+  universityLogo: string = "./../../../assets/imgs/universityLogo.webp";
   menu: Array<MenuType> = [
     {
       name: 'Founder',

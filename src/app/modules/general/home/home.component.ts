@@ -40,8 +40,8 @@ export class HomeComponent implements OnInit{
   leadershipConfig = {
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: "<div class='nav-btn next-slide'></div>",
-    prevArrow: "<div class='nav-btn prev-slide'></div>",
+    nextArrow: "<div class='nav-btn next-slide d-xl-none d-lg-none'><i class='fas fa-arrow-right'></i></div>",
+    prevArrow: "<div class='nav-btn prev-slide d-xl-none d-lg-none'><i class='fas fa-arrow-left'></i></div>",
     arrow: false,
     dots: true,
     infinite: true,
@@ -51,30 +51,35 @@ export class HomeComponent implements OnInit{
     pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 991,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: true,
-          dots: true
+          arrow: true,
+          dots: false,
         }
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToScroll: 2,
+          arrow: true,
+          dots: false,
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          arrow: true,
+          dots: false,
         }
       }
     ]
   };
+
   testimonialConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -90,8 +95,8 @@ export class HomeComponent implements OnInit{
   courseConfig = {
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: "<div class='nav-btn next-slide'><i class='fas fa-chevron-right'></i></div>",
-    prevArrow: "<div class='nav-btn prev-slide'><i class='fas fa-chevron-left'></i></div>",
+    nextArrow: "<div class='nav-btn next-slide'><i class='fas fa-arrow-right'></i></div>",
+    prevArrow: "<div class='nav-btn prev-slide'><i class='fas fa-arrow-left'></i></div>",
     arrow: true,
     dots: false,
     infinite: true,

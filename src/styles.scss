@@ -6,6 +6,7 @@ body {
   font-weight: normal !important;
   letter-spacing: 1px !important;
 }
+
 :root {
   --primary-color: #fff;
   --background-color: #e5e5e5;
@@ -13,12 +14,13 @@ body {
   --text-color-white: #fff;
   --text-color-dark: #2d2d2d;
 }
+
 ::selection {
   color: var(--primary-orange);
   background-color: var(--primary-blue);
 }
 
-.invalidText{
+.invalidText {
   font-size: var(--font-14);
 }
 
@@ -30,28 +32,31 @@ body {
   outline-offset: 0px;
   text-shadow: none;
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-} 
+}
 
 .btn-5:hover {
   border: 1px solid;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
   outline-color: rgba(255, 255, 255, 0);
   outline-offset: 15px;
-  text-shadow: 1px 1px 2px #427388; 
+  text-shadow: 1px 1px 2px #427388;
 }
 
 .main-heading {
-    font-size: var(--font-48);
-    color: var(--primary-blue);
+  font-size: var(--font-48);
+  color: var(--primary-blue);
 }
+
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
 .cdk-overlay-container {
   z-index: 9999 !important;
 }
+
 app-home {
   .topBrassCarousel {
-    .slick-dots{
+    .slick-dots {
       bottom: -50px;
 
       li {
@@ -59,17 +64,20 @@ app-home {
         width: 40px;
         border-radius: 10px;
         background-color: var(--primary-blue);
+
         button {
           height: 8px;
           width: 40px;
         }
-        button::before{
+
+        button::before {
           height: 8px;
           width: 40px;
           color: transparent;
         }
       }
     }
+
     .slick-dots li.slick-active button:before {
       background-color: var(--primary-orange);
       border-radius: 10px;
@@ -82,6 +90,7 @@ app-home {
       bottom: 15px !important;
       display: flex !important;
       justify-content: end !important;
+
       li {
         button {
           width: 18px;
@@ -89,6 +98,7 @@ app-home {
           background-color: var(--primary-blue);
           border-radius: 50%;
         }
+
         button::before {
           content: "";
           width: 18px;
@@ -98,6 +108,7 @@ app-home {
         }
       }
     }
+
     .slick-dots li.slick-active button:before {
       color: transparent;
       background-color: var(--primary-orange);
@@ -112,24 +123,177 @@ app-home {
       position: absolute;
       top: calc(100% - 60%);
       left: calc(100% - 102%);
+
       i {
         font-size: 22px;
         color: var(--primary-blue);
       }
     }
-    .next-slide{
+
+    .next-slide {
       display: flex;
       align-items: center;
       position: absolute;
       top: calc(100% - 60%);
       right: calc(100% - 102%);
+
       i {
         font-size: 22px;
         color: var(--primary-blue);
       }
     }
   }
- 
+
+  .courseSlider {
+    .next-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: calc(100% - 58%);
+      bottom: calc(100% - 112%);
+      cursor: pointer;
+
+      i {
+        background: var(--primary-blue);
+        padding: 20px;
+        color: #fff;
+        line-height: 0;
+      }
+    }
+
+    .next-slide:hover {
+      i {
+        background: var(--primary-orange);
+        color: var(--primary-blue);
+      }
+    }
+
+    .prev-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: calc(100% - 55%);
+      bottom: calc(100% - 112%);
+      cursor: pointer;
+
+      i {
+        background: var(--primary-blue);
+        padding: 20px;
+        color: #fff;
+        line-height: 0;
+      }
+    }
+
+    .prev-slide:hover {
+      i {
+        background: var(--primary-orange);
+        color: var(--primary-blue);
+      }
+    }
+  }
+  .topBrassCarousel{
+    .next-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: calc(100% - 58%);
+      bottom: calc(100% - 112%);
+      cursor: pointer;
+
+      i {
+        background: var(--primary-blue);
+        padding: 20px;
+        color: #fff;
+        line-height: 0;
+      }
+    }
+
+    .next-slide:hover {
+      i {
+        background: var(--primary-orange);
+        color: var(--primary-blue);
+      }
+    }
+
+    .prev-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: calc(100% - 55%);
+      bottom: calc(100% - 112%);
+      cursor: pointer;
+
+      i {
+        background: var(--primary-blue);
+        padding: 20px;
+        color: #fff;
+        line-height: 0;
+      }
+    }
+
+    .prev-slide:hover {
+      i {
+        background: var(--primary-orange);
+        color: var(--primary-blue);
+      }
+    }
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 450px) {
+  app-home {
+    .topBrassCarousel {
+      .next-slide {
+        right: calc(100% - 68%);
+        bottom: calc(100% - 112%);
+      }
+
+      .prev-slide {
+        left: calc(100% - 68%);
+        bottom: calc(100% - 112%);
+      }
+    }
+    .courseSlider {
+      .next-slide {
+        right: calc(100% - 68%);
+        bottom: calc(100% - 112%);
+      }
+
+      .prev-slide {
+        left: calc(100% - 68%);
+        bottom: calc(100% - 112%);
+      }
+    }
+  }
+}
+@media screen and (min-width: 450px) and (max-width: 574px) {
+  app-home {
+    .topBrassCarousel {
+      .next-slide {
+        right: calc(100% - 64%);
+        bottom: calc(100% - 112%);
+      }
+
+      .prev-slide {
+        left: calc(100% - 64%);
+        bottom: calc(100% - 112%);
+      }
+    }
+    .courseSlider {
+      .next-slide {
+        right: calc(100% - 64%);
+        bottom: calc(100% - 112%);
+      }
+
+      .prev-slide {
+        left: calc(100% - 64%);
+        bottom: calc(100% - 112%);
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 300px) and (max-width: 574px) {
@@ -143,12 +307,14 @@ app-home {
         bottom: calc(100% - 134%);
         left: calc(100% - 56%);
         justify-content: center;
+
         i {
           font-size: 22px;
           color: var(--primary-blue);
         }
       }
-      .next-slide{
+
+      .next-slide {
         top: unset;
         display: flex;
         align-items: center;
@@ -156,6 +322,7 @@ app-home {
         bottom: calc(100% - 134%);
         right: calc(100% - 56%);
         justify-content: center;
+
         i {
           font-size: 22px;
           color: var(--primary-blue);
@@ -168,4 +335,71 @@ app-home {
   }
 }
 
+@media screen and (min-width: 575px) and (max-width: 767px) {
+  app-home {
+    .topBrassCarousel{
+      .next-slide {
+        right: calc(100% - 62%);
+        bottom: calc(100% - 120%);
+      }
 
+      .prev-slide {
+        left: calc(100% - 62%);
+        bottom: calc(100% - 120%);
+      }
+    }
+    .courseSlider {
+      .next-slide {
+        right: calc(100% - 62%);
+        bottom: calc(100% - 112%);
+      }
+
+      .prev-slide {
+        left: calc(100% - 62%);
+        bottom: calc(100% - 112%);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  app-home {
+    .topBrassCarousel{
+      .next-slide {
+        right: calc(100% - 59%);
+        bottom: calc(100% - 115%);
+      }
+      .prev-slide {
+        left: calc(100% - 59%);
+        bottom: calc(100% - 115%);
+      }
+    }
+    .courseSlider {
+      .next-slide {
+        right: calc(100% - 59%);
+        bottom: calc(100% - 112%);
+      }
+
+      .prev-slide {
+        left: calc(100% - 59%);
+        bottom: calc(100% - 112%);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 991px) and (max-width: 1199px) {
+  app-home {
+    .courseSlider {
+      .next-slide {
+        right: calc(100% - 58%);
+        bottom: calc(100% - 112%);
+      }
+
+      .prev-slide {
+        left: calc(100% - 56%);
+        bottom: calc(100% - 112%);
+      }
+    }
+  }
+}

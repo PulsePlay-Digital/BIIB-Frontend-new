@@ -641,8 +641,7 @@ hr:after {
           color: var(--primary-blue);
           font-size: var(--font-16);
         }
-
-        p {
+        .description {
           text-transform: var(--text-uppercase);
           font-weight: var(--font-600);
           font-size: var(--font-14);
