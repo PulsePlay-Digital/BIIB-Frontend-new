@@ -134,6 +134,50 @@ export class HomeComponent implements OnInit{
     ]
   };
 
+  newsConfig = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: "<div class='nav-btn next-slide'><i class='fas fa-arrow-right'></i></div>",
+    prevArrow: "<div class='nav-btn prev-slide'><i class='fas fa-arrow-left'></i></div>",
+    arrow: true,
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
+          arrow: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
   partnerConfig = {
     slidesToShow: 6,
     slidesToScroll: 1,

@@ -431,37 +431,40 @@
         </div>
       </div>
       <div class="row py-xl-4 py-lg-4 py-md-4 py-sm-4 py-3">
-        <div class="col-xl-4 col-lg-4 col-md-6 my-2 my-2" *ngFor="let item of allHomeData?.News; index as i;">
-          <div class="card shadow">
-            <div class="newImg position-relative">
-              <img [src]="imgPath + item?.featured_image" class="card-img-top" alt="newsImg">
-              <div class="calender">
-                <div class="row m-0 p-1">
-                  <div class="col-xxl-4 col-xl-4 col-lg-5">
-                    <p class="text-uppercase mb-0 text-white">
-                      <i class="fas fa-user me-2 text-white"></i> {{item?.issued_by}}
-                    </p>
-                  </div>
-                  <div class="col-xxl-4 col-xl-5 col-lg-6">
-                    <p class="text-uppercase mb-0 text-white">
-                      <i class="fas fa-calendar-alt text-white me-2"></i> {{item?.published_at | date: 'MMM-dd-yyyy'
-                      }}
-                    </p>
+        <ngx-slick-carousel class="carousel courseSlider my-xl-5 mb-lg-4 mb-md-4 mb-sm-4 mb-5"
+        #slickModal="slick-carousel" [config]="newsConfig">
+          <div ngxSlickItem class="col-xl-4 col-lg-4 col-md-6 my-2 my-2 slide px-2" *ngFor="let item of allHomeData?.News; index as i;">
+            <div class="card shadow">
+              <div class="newImg position-relative">
+                <img [src]="imgPath + item?.featured_image" class="card-img-top" alt="newsImg">
+                <div class="calender">
+                  <div class="row m-0 p-1">
+                    <div class="col-xxl-4 col-xl-4 col-lg-5">
+                      <p class="text-uppercase mb-0 text-white">
+                        <i class="fas fa-user me-2 text-white"></i> {{item?.issued_by}}
+                      </p>
+                    </div>
+                    <div class="col-xxl-4 col-xl-5 col-lg-6">
+                      <p class="text-uppercase mb-0 text-white">
+                        <i class="fas fa-calendar-alt text-white me-2"></i> {{item?.published_at | date: 'MMM-dd-yyyy'
+                        }}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title newsTitle text-uppercase lh-base">{{item?.title}}</h5>
-            </div>
-            <div class="card-footer border-0 bg-transparent pb-3">
-              <div class="btn-group me-2" role="group" aria-label="Second group">
-                <a class="btn btn-news btn-lg text-uppercase lh-md">read more<i
-                    class="fas fa-chevron-right ms-2"></i></a>
+              <div class="card-body">
+                <h5 class="card-title newsTitle text-uppercase lh-base">{{item?.title}}</h5>
+              </div>
+              <div class="card-footer border-0 bg-transparent pb-3">
+                <div class="btn-group me-2" role="group" aria-label="Second group">
+                  <a class="btn btn-news btn-lg text-uppercase lh-md">read more<i
+                      class="fas fa-chevron-right ms-2"></i></a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </ngx-slick-carousel>
       </div>
       <div class="row justify-content-center py-xl-3 py-lg-3 py-md-3 py-2">
         <div class="col-xl-4 text-center">
