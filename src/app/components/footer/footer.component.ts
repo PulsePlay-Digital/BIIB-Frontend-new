@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 import { MenuType } from './types';
 
 @Component({
@@ -6,7 +7,7 @@ import { MenuType } from './types';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
   logo: any = './assets/imgs/biib-logo.png';
 
   menu: Array<MenuType> = [
@@ -251,4 +252,20 @@ export class FooterComponent {
     //   // url: '/admission'
     // }
   ]
+  footerLink: any;
+  constructor(private dataService: DataService) {
+
+  }
+  ngOnInit(): void {
+    this.getMenuData()
+  }
+
+  async getMenuData() {
+    let action = "footerMenu";
+    await this.dataService.getData(action).subscribe((res: any) => {
+      // console.log(res)
+      this.footerLink = res?.data
+      console.log(this.footerLink)
+    });
+  }
 }

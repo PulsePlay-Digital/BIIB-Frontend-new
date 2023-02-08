@@ -434,7 +434,7 @@
         <ngx-slick-carousel class="carousel courseSlider my-xl-5 mb-lg-4 mb-md-4 mb-sm-4 mb-5"
         #slickModal="slick-carousel" [config]="newsConfig">
           <div ngxSlickItem class="col-xl-4 col-lg-4 col-md-6 my-2 my-2 slide px-2" *ngFor="let item of allHomeData?.News; index as i;">
-            <div class="card shadow">
+            <div class="card">
               <div class="newImg position-relative">
                 <img [src]="imgPath + item?.featured_image" class="card-img-top" alt="newsImg">
                 <div class="calender">
@@ -538,10 +538,7 @@
       <div class="row">
         <div class="col-xl-12">
           <div class="gal">
-            <!-- <ng-container *ngFor="let gal of allHomeData?.Gallery;index as i;">
-              <img [src]="imgPath + gal?.featured_image" alt="campus Img">
-            </ng-container> -->
-            <div class="" gallerize>
+            <div class="masonary" gallerize>
               <img *ngFor="let gal of allHomeData?.Gallery;index as i;" [src]="imgPath + gal?.featured_image"
                 [attr.imageSrc]="imgPath + gal?.featured_image" [attr.thumbSrc]="imgPath + gal?.featured_image">
             </div>
