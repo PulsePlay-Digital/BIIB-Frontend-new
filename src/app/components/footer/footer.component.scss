@@ -4,11 +4,13 @@ footer {
   .address-section {
     li {
       color: var(--bs-white);
+
       a {
         color: var(--bs-white);
         text-decoration: var(--text-no-underline);
       }
-      a:hover i{
+
+      a:hover i {
         color: var(--primary-orange);
       }
     }
@@ -18,17 +20,20 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
     ul {
-      li.nav-item a{
+      li.nav-item a {
         color: var(--bs-white);
         font-size: var(--font-16);
         text-decoration: var(--text-no-underline);
         line-height: 34px;
       }
-      li.nav-item a:hover i {
+
+      li.nav-item a:hover,li.nav-item a:hover i {
         color: var(--primary-orange);
         transition: var(--transition);
       }
+
       // li.nav-item::before {
       //   content: url('./../../../assets/imgs/book.svg');
       //   // background: url('./../../../assets/imgs/book.png');
@@ -39,21 +44,26 @@ footer {
 
     }
   }
+
   .email-subscribe {
     .subscribe_text {
       font-size: var(--font-20);
     }
+
     input {
       color: var(--bs-white);
     }
+
     input::placeholder {
       font-size: var(--font-14);
       color: var(--bs-white);
     }
-    a .email{
+
+    a .email {
       color: var(--bs-white);
     }
-    a:hover .email{
+
+    a:hover .email {
       color: var(--primary-orange);
       animation: rotate 2s ease 0s infinite normal forwards;
     }
@@ -63,8 +73,9 @@ footer {
     p {
       color: var(--bs-white);
     }
+
     .list-unstyled {
-      li{
+      li {
         a {
           background-color: var(--primary-orange);
           height: 36px;
@@ -74,21 +85,25 @@ footer {
           justify-content: center;
           text-decoration: none;
           border-radius: 10px;
+
           i {
             font-size: var(--font-22);
             color: var(--bs-white);
           }
         }
+
         a:hover {
           border-radius: 50%;
           transition: var(--transition);
         }
       }
     }
+
     .cmpName {
       color: var(--bs-white);
       white-space: nowrap;
     }
+
     .cmpName:hover {
       color: var(--primary-orange);
     }
@@ -112,70 +127,111 @@ hr:after {
   max-width: 34%;
   border-radius: 20px;
 }
+
 @keyframes rotate {
-	0% {
-		transform: scale3d(1, 1, 1);
-	}
-
-	30% {
-		transform: scale3d(1.25, 0.75, 1);
-	}
-
-	40% {
-		transform: scale3d(0.75, 1.25, 1);
-	}
-
-	50% {
-		transform: scale3d(1.15, 0.85, 1);
-	}
-
-	65% {
-		transform: scale3d(0.95, 1.05, 1);
-	}
-
-	75% {
-		transform: scale3d(1.05, 0.95, 1);
-	}
-
-	100% {
-		transform: scale3d(1, 1, 1);
-	}
-}
-@keyframes shake {
-			
   0% {
-    transform:rotate(0deg);
-    transform-origin:50% 50%;
+    transform: scale3d(1, 1, 1);
   }
-  10% {
-    transform:rotate(8deg);
-  }
-  20% {
-    transform:rotate(-10deg);
-  }
+
   30% {
-    transform:rotate(10deg);
+    transform: scale3d(1.25, 0.75, 1);
   }
+
   40% {
-    transform:rotate(-10deg);
+    transform: scale3d(0.75, 1.25, 1);
   }
+
   50% {
-    transform:rotate(10deg);
+    transform: scale3d(1.15, 0.85, 1);
   }
-  60% {
-    transform:rotate(-10deg);
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
   }
-  70% {
-    transform:rotate(10deg);
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
   }
-  80% {
-    transform:rotate(-8deg);
-  }
-  90% {
-    transform:rotate(8deg);
-  }
+
   100% {
-    transform:rotate(0deg);
-    transform-origin:50% 50%;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes shake {
+
+  0% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+
+  10% {
+    transform: rotate(8deg);
+  }
+
+  20% {
+    transform: rotate(-10deg);
+  }
+
+  30% {
+    transform: rotate(10deg);
+  }
+
+  40% {
+    transform: rotate(-10deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    transform: rotate(10deg);
+  }
+
+  80% {
+    transform: rotate(-8deg);
+  }
+
+  90% {
+    transform: rotate(8deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 449px) {
+  footer {
+    .footerMenu {
+      .menuList {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 574px) {
+  footer {
+    .footerMenu {
+      .menuList {
+        width: 48%;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 575px) and (max-width: 767px) {
+  footer {
+    .footerMenu {
+      .menuList {
+        width: 50%;
+      }
+    }
   }
 }
