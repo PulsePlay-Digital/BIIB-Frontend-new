@@ -198,9 +198,7 @@ export class HomeComponent implements OnInit{
     await this.dataService.getData(action).subscribe((res: any) => {
       this.allHomeData = res?.data;
       this.kpis = this.allHomeData?.Kpi;
-      console.log(this.kpis)
       this.loading = false;
-      console.log(this.allHomeData)
     })
   }
 

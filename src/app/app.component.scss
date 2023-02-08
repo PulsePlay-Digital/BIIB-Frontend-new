@@ -83,3 +83,9 @@
     transition: width .5s;
     height: 100vh;
   }
+
+  @media only screen and (min-width: 300px) and (max-width: 574px) {
+    .main {
+      padding-top: 74px;
+    }
+  }
