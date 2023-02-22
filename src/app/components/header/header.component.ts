@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit{
 constructor(public http: HttpClient, private notify: NotificationService, private dataService: DataService) {
 
 }
-  logo: string = './assets/imgs/biib-logo.png';
+  logo: string = './assets/imgs/BIIB-logo.webp';
   universityLogo: string = "./../../../assets/imgs/universityLogo.webp";
   menu: Array<MenuType> = [
     {

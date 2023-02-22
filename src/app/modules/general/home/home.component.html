@@ -22,6 +22,9 @@
                     <div class="icon"><i class="fas fa-hand-pointer"></i></div>
                   </div>
                 </div>
+                <div id="outer">
+                  <div class="button_slide slide_right text-uppercase">Apply Now</div>
+                </div>
               </div>
             </div>
           </div>
@@ -30,6 +33,7 @@
     </div>
   </div>
   <!-- Hero Section End -->
+
   <!-- About Us -->
   <div class="aboutSection py-xl-4 py-lg-4 py-md-4 py-4">
     <div class="container">
@@ -69,16 +73,22 @@
   <!-- About Us END -->
 
   <!-- Thriving for Excellence -->
-  <div class="thrivingSection py-xl-4 py-lg-4 py-md-4 pb-4">
-    <div class="container">
+  <div class="thrivingSection pb-4">
+    <!-- <div class="thrivingImg d-xl-block d-lg-block d-md-block d-none">
+      <img src="./../../../../assets/imgs/navHrDown.png">
+    </div> -->
+    <div class="container position-relative">
+      <div class="thrivingImg d-xl-block d-lg-block d-md-block d-none">
+        <img src="./../../../../assets/imgs/navHrDown.png">
+      </div>
       <div class="row">
-        <div class="row m-0 pb-xl-3 pb-lg-3 pb-md-2 justify-content-center">
+        <div class="row m-0 pb-xl-3 pb-lg-3 pb-md-2 justify-content-start">
           <div class="col-12 pb-2 text-center">
-            <h4 class="main-heading text-uppercase fw-bold">Thriving for Excellence</h4>
+            <h4 class="main-heading text-capitalize fw-bold">Thriving for Excellence</h4>
           </div>
-          <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-5">
+          <!-- <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-5">
             <hr>
-          </div>
+          </div> -->
         </div>
 
         <div class="col-xl-4 col-lg-4 col-md-4 my-3" *ngFor="let award of allHomeData?.Award;index as i;">
@@ -102,7 +112,7 @@
   <!-- Thriving for Excellence END -->
 
   <!-- KPI Section -->
-  <div class="position-relative">
+  <!-- <div class="position-relative">
     <div class="kpiSVG d-xl-block d-lg-block d-md-block d-none"></div>
     <div class="KPI-section">
       <div class="row m-0">
@@ -251,12 +261,44 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- KPI Section END -->
 
   <!-- Why BIIB Section -->
-  <div class="whyBIIB">
+  <div class="whyBIIB py-xl-5 py-lg-5 py-md-5 py-sm-5 py-4">
     <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 my-3">
+          <div class="sections text-xl-start text-lg-start text-md-center text-sm-center text-center">
+            <div class="logo pb-3"><i class="fas fa-medal"></i></div>
+            <h4 class="title my-3">Our Courses</h4>
+            <p class="description mb-0">BIIB Offers MBA in International Business, Marketing and Finance and also PhD Programs.</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 my-3">
+          <div class="sections text-xl-start text-lg-start text-md-center text-sm-center text-center">
+            <div class="logo pb-3"><i class="fas fa-medal"></i></div>
+            <h4 class="title my-3">Industry Interface</h4>
+            <p class="description mb-0">Applied approach for learning includes Intensive training, meeting 250+ senior corporate leaders every year.</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 my-3">
+          <div class="sections text-xl-start text-lg-start text-md-center text-sm-center text-center">
+            <div class="logo pb-3"><i class="fas fa-medal"></i></div>
+            <h4 class="title my-3">Campus</h4>
+            <p class="description mb-0">One of the best B-school campuses in Pune and is well-equipped with state-of-the-art facilities and the latest technology.</p>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 my-3">
+          <div class="sections text-xl-start text-lg-start text-md-center text-sm-center text-center">
+            <div class="logo pb-3"><i class="fas fa-medal"></i></div>
+            <h4 class="title my-3">Placement</h4>
+            <p class="description mb-0">All the hard and smart work pays-off when best of the organizations hire BIIB students.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="container">
       <div class="row pt-xl-4 pt-4">
         <div class="col-xl-8 order-xl-1 order-2">
           <div class="row py-xl-4 py-2">
@@ -275,7 +317,6 @@
           </div>
         </div>
         <div class="col-xl-4 order-xl-2 order-1 align-self-end">
-          <!--Heading-->
           <div class="row pb-xl-3 pb-lg-3 pb-md-2 justify-content-center">
             <div class="col-12 pb-2 text-center">
               <h4 class="main-heading text-uppercase fw-bold">Why Choose BIIB ?</h4>
@@ -291,7 +332,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
   <!-- Why BIIB Section End -->
 
@@ -314,56 +355,6 @@
     </div>
   </div>
   <!-- Query Form Section End -->
-
-  <!-- Our Courses Section -->
-  <div class="courses py-xl-4 py-lg-4 py-4">
-    <div class="container">
-      <div class="row pb-xl-3 pb-lg-3 pb-md-2 justify-content-center py-xl-3 m-0">
-        <div class="col-12 pb-2 text-center">
-          <h4 class="main-heading text-uppercase fw-bold">OUR Courses</h4>
-        </div>
-        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-3 col-5">
-          <hr class="w-75 m-auto">
-        </div>
-      </div>
-      <div class="row py-xl-4 py-lg-4 py-md-4 pb-xl-5 py-3">
-        <ngx-slick-carousel class="carousel courseSlider mb-5" #slickModal="slick-carousel" [config]="courseConfig">
-          <div ngxSlickItem class="col-xl-3 col-lg-3 col-md-6 my-2 px-2"
-            *ngFor="let course of allHomeData?.Course; index as i;">
-            <div class="card p-3 rounded">
-              <div class="coursesImg position-relative">
-                <img [src]="imgPath + course?.featured_image" class="card-img-top rounded-top" alt="newsImg">
-                <div class="seats">
-                  <div class="row justify-content-center">
-                    <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-5 col-sm-7 col-6">
-                      <p class="text-uppercase mb-0 text-white text-center">
-                        <i class="fas fa-user-friends text-white me-1"></i> {{course?.seats}} Seats
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body px-0">
-                <h5
-                  class="card-title courseTitle text-uppercase lh-base text-xl-start text-lg-start text-md-start text-sm-start text-center">
-                  {{course?.title}}</h5>
-                <p class="lh-base text-xl-start text-lg-start text-md-start text-sm-start text-center">{{course?.info}}
-                </p>
-              </div>
-              <div
-                class="card-footer border-0 bg-transparent pb-0 px-0 text-xl-start text-lg-start text-md-start text-sm-start text-center">
-                <div class="btn-group me-2" role="group" aria-label="Second group">
-                  <a class="btn btn-course btn-lg text-uppercase lh-md">read more<i
-                      class="fas fa-chevron-right ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ngx-slick-carousel>
-      </div>
-    </div>
-  </div>
-  <!-- Our Courses Section End -->
 
   <!-- Testimonial Section -->
   <div class="testimonial">
@@ -418,66 +409,6 @@
   </div>
   <!-- Testimonial Section End -->
 
-  <!-- Our News Section -->
-  <div class="news py-xl-4 py-lg-4 py-md-4 py-sm-4 py-3">
-    <div class="container">
-      <!--Heading-->
-      <div class="row pb-xl-3 pb-lg-3 pb-2 justify-content-center py-xl-3 py-lg-3 py-md-3 py-sm-3 py-2">
-        <div class="col-12 pb-2 text-center">
-          <h4 class="main-heading text-uppercase fw-bold">OUR NEWS</h4>
-        </div>
-        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-5">
-          <hr class="w-75 m-auto">
-        </div>
-      </div>
-      <div class="row py-xl-4 py-lg-4 py-md-4 py-sm-4 py-3">
-        <ngx-slick-carousel class="carousel courseSlider my-xl-5 mb-lg-4 mb-md-4 mb-sm-4 mb-5"
-        #slickModal="slick-carousel" [config]="newsConfig">
-          <div ngxSlickItem class="col-xl-4 col-lg-4 col-md-6 my-2 my-2 slide px-2" *ngFor="let item of allHomeData?.News; index as i;">
-            <div class="card">
-              <div class="newImg position-relative">
-                <img [src]="imgPath + item?.featured_image" class="card-img-top" alt="newsImg">
-                <div class="calender">
-                  <div class="row m-0 p-1">
-                    <div class="col-xxl-4 col-xl-4 col-lg-5">
-                      <p class="text-uppercase mb-0 text-white">
-                        <i class="fas fa-user me-2 text-white"></i> {{item?.issued_by}}
-                      </p>
-                    </div>
-                    <div class="col-xxl-4 col-xl-5 col-lg-6">
-                      <p class="text-uppercase mb-0 text-white">
-                        <i class="fas fa-calendar-alt text-white me-2"></i> {{item?.published_at | date: 'MMM-dd-yyyy'
-                        }}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title newsTitle text-uppercase lh-base">{{item?.title}}</h5>
-              </div>
-              <div class="card-footer border-0 bg-transparent pb-3">
-                <div class="btn-group me-2" role="group" aria-label="Second group">
-                  <a class="btn btn-news btn-lg text-uppercase lh-md">read more<i
-                      class="fas fa-chevron-right ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ngx-slick-carousel>
-      </div>
-      <div class="row justify-content-center py-xl-3 py-lg-3 py-md-3 py-2">
-        <div class="col-xl-4 text-center">
-          <div class="btn-group me-2" role="group" aria-label="Second group">
-            <a class="btn btn-news btn-blogs btn-lg text-uppercase lh-lg">read all blogs<i
-                class="fas fa-chevron-right ms-2"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Our News Section End -->
-
   <!-- Leadership Section -->
   <div class="topBrass py-xl-5 py-lg-5 py-lg-4 py-md-4 py-sm-4 py-4">
     <div class="container">
@@ -485,9 +416,9 @@
         <div class="col-12 pb-2 text-center">
           <h6 class="main-heading text-uppercase fw-bold">Leadership team</h6>
         </div>
-        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-4">
+        <!-- <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-4">
           <hr class="m-auto">
-        </div>
+        </div> -->
       </div>
       <div class="row">
         <div class="col-12 px-0 pb-md-4 pb-sm-4 pb-4">
@@ -523,7 +454,91 @@
     </div>
   </div>
   <!-- Leadership Section End -->
-
+  <!-- Events Section -->
+  <div class="events">
+    <div class="eventsHr">
+      <img src="./../../../../assets/imgs/navHrRight.png" alt="hr">
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center py-xl-5 py-lg-5 py-md-4 py-3">
+          <h6 class="main-heading text-capitalize fw-bold mb-0">Events</h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4 my-2">
+          <div class="card bg-transparent rounded-0 border-0">
+            <div class="imageSection pb-2">
+              <img src="./../../../../assets/imgs/homeImages/homeAbout.webp" class="card-img-top rounded-0"
+                alt="events Img">
+              <div class="dateSection text-white text-uppercase">
+                <div class="info">
+                  <h4 class="mb-0 lh-normal">27</h4>
+                  <p class="mb-0 lh-normal">Feb</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body px-0">
+              <h5 class="eventTitle text-white">Event Title In publishing</h5>
+              <p class="card-text text-white description">Some quick example text to build on the card title and make up
+                the bulk of the card's content.</p>
+              <p class="muted ">27 Feb 2023</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 my-2">
+          <div class="card bg-transparent rounded-0 border-0">
+            <div class="imageSection pb-2">
+              <img src="./../../../../assets/imgs/homeImages/homeAbout.webp" class="card-img-top rounded-0"
+                alt="events Img">
+              <div class="dateSection text-white text-uppercase">
+                <div class="info">
+                  <h4 class="mb-0 lh-normal">27</h4>
+                  <p class="mb-0 lh-normal">Feb</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body px-0">
+              <h5 class="eventTitle text-white">Event Title In publishing</h5>
+              <p class="card-text text-white description">Some quick example text to build on the card title and make up
+                the bulk of the card's content.</p>
+              <p class="muted ">27 Feb 2023</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 my-2">
+          <div class="card bg-transparent rounded-0 border-0">
+            <div class="imageSection pb-2">
+              <img src="./../../../../assets/imgs/homeImages/homeAbout.webp" class="card-img-top rounded-0"
+                alt="events Img">
+              <div class="dateSection text-white text-uppercase">
+                <div class="info">
+                  <h4 class="mb-0 lh-normal">27</h4>
+                  <p class="mb-0 lh-normal">Feb</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body px-0">
+              <h5 class="eventTitle text-white">Event Title In publishing</h5>
+              <p class="card-text text-white description">Some quick example text to build on the card title and make up
+                the bulk of the card's content.</p>
+              <p class="muted ">27 Feb 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center py-xl-4 py-lg-4 py-md-4 py-4">
+        <div class="col-xl-4 mb-3 text-center">
+          <div class="btn-group me-2" role="group" aria-label="Second group">
+            <div id="outer">
+              <a class="button_slide slide_right eventsBtn text-capitalize text-decoration-none">all events</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Events Section End -->
   <!-- Campus Gallery Section -->
   <div class="campusGallery">
     <div class="container">
@@ -557,11 +572,106 @@
   </div>
   <!-- Campus Gallery Section End -->
 
+  <!-- KPI Section -->
+  <div class="mainKpi my-4">
+    <div class="kpiImg d-xl-block d-lg-block d-md-none d-none">
+      <img src="./../../../../assets/imgs/navHrLeft.png">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 border-end">
+          <div class="info text-center py-4">
+            <p class="fw-bold text-uppercase">placement</p>
+            <h5 class="fw-bold lh-base description mb-0">100%</h5>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 border-end">
+          <div class="info text-center py-4">
+            <p class="fw-bold text-uppercase">Research</p>
+            <h5 class="fw-bold lh-base description mb-0">76+</h5>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 border-end">
+          <div class="info text-center py-4">
+            <p class="fw-bold text-uppercase">Highest Package</p>
+            <h5 class="fw-bold lh-base description mb-0">18.50 L</h5>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+          <div class="info text-center py-4">
+            <p class="fw-bold text-uppercase">Alumni</p>
+            <h5 class="fw-bold lh-base description mb-0">16k+</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- KPI Section End -->
+
+  <!-- Our Courses Section -->
+  <div class="courses py-xl-4 py-lg-4 py-4">
+    <div class="container">
+      <div class="row pb-xl-3 pb-lg-3 pb-md-2 justify-content-start py-xl-3 m-0">
+        <div class="col-12 pb-2">
+          <h4 class="main-heading text-capitalize fw-bold">Courses offered</h4>
+        </div>
+        <!-- <div class="col-xl-2 col-lg-2 col-md-4 col-sm-3 col-5">
+          <hr class="w-75">
+        </div> -->
+      </div>
+      <div class="row">
+        <ngx-slick-carousel class="carousel courseSlider" #slickModal="slick-carousel" [config]="courseConfig">
+          <div ngxSlickItem class="col-xl-3 col-lg-3 col-md-6 my-2 px-2"
+            *ngFor="let course of allHomeData?.Course; index as i;">
+            <div class="card rounded-0">
+              <div class="coursesImg position-relative">
+                <img [src]="imgPath + course?.featured_image" class="card-img-top rounded-0" alt="newsImg">
+                <!-- <div class="seats">
+                  <div class="row justify-content-center">
+                    <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-5 col-sm-7 col-6">
+                      <p class="text-uppercase mb-0 text-white text-center">
+                        <i class="fas fa-user-friends text-white me-1"></i> {{course?.seats}} Seats
+                      </p>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div class="card-body">
+                <h5
+                  class="card-title courseTitle text-uppercase lh-base text-xl-start text-lg-start text-md-start text-sm-start text-center">
+                  {{course?.title}}</h5>
+                <p class="lh-base text-xl-start text-lg-start text-md-start text-sm-start text-center mb-0">
+                  {{course?.info}}
+                </p>
+              </div>
+              <div
+                class="card-footer border-0 bg-transparent pb-0 px-0 text-xl-start text-lg-start text-md-start text-sm-start text-center">
+                <div class="card-footer border-0 bg-transparent pb-3">
+                  <div class="btn-group me-2" role="group" aria-label="Second group">
+                    <div id="outer">
+                      <a class="button_slide slide_right text-capitalize text-decoration-none">apply now</a>
+                    </div>
+                    <!-- <a class="btn btn-news btn-lg text-uppercase lh-md">read more<i
+                        class="fas fa-chevron-right ms-2"></i></a> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ngx-slick-carousel>
+      </div>
+    </div>
+  </div>
+  <!-- Our Courses Section End -->
+
   <!-- Partner Logo -->
   <div class="partnerLog py-xl-5 py-lg-5 py-md-5 py-sm-4 py-4">
     <div class="container">
       <div class="row">
-        <div class="col-12 px-0">
+        <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-12 align-self-center mb-xl-0 mb-lg-0 mb-2">
+          <p class="mb-0 heading">Trusted By Top 100+ Companies</p>
+        </div>
+        <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-8 col-12 px-0">
           <ngx-slick-carousel class="carousel mb-xl-0 mb-lg-0 mb-md-0 mb-sm-2 mb-5 partnerLogo"
             #slickModal="slick-carousel" [config]="partnerConfig">
             <div ngxSlickItem *ngFor="let item of allHomeData?.Recruiter" class="slide px-2">
@@ -573,4 +683,69 @@
     </div>
   </div>
   <!-- Partner Logo End-->
+
+  <!-- Our News Section -->
+  <div class="news py-xl-4 py-lg-4 py-md-4 py-sm-4 py-3">
+    <div class="container">
+      <!--Heading-->
+      <div class="row pb-xl-3 pb-lg-3 pb-2 justify-content-start py-xl-3 py-lg-3 py-md-3 py-sm-3 py-2">
+        <div class="col-12 pb-2">
+          <h4 class="main-heading text-capitalize fw-bold">Latest News</h4>
+        </div>
+        <!-- <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-5">
+            <hr class="w-75 ">
+          </div> -->
+      </div>
+      <div class="row">
+        <ngx-slick-carousel class="carousel courseSlider" #slickModal="slick-carousel" [config]="newsConfig">
+          <div ngxSlickItem class="col-xl-4 col-lg-4 col-md-6 my-2 my-2 slide px-xl-2 px-lg-2 px-md-2 px-sm-1 px-0"
+            *ngFor="let item of allHomeData?.News; index as i;">
+            <div class="card rounded-0">
+              <div class="newImg position-relative">
+                <img [src]="imgPath + item?.featured_image" class="card-img-top rounded-0" alt="newsImg">
+                <!-- <div class="calender">
+                    <div class="row m-0 p-1">
+                      <div class="col-xxl-4 col-xl-4 col-lg-5">
+                        <p class="text-uppercase mb-0 text-white">
+                          <i class="fas fa-user me-2 text-white"></i> {{item?.issued_by}}
+                        </p>
+                      </div>
+                      <div class="col-xxl-4 col-xl-5 col-lg-6">
+                        <p class="text-uppercase mb-0 text-white">
+                          <i class="fas fa-calendar-alt text-white me-2"></i> {{item?.published_at | date: 'MMM-dd-yyyy'
+                          }}
+                        </p>
+                      </div>
+                    </div>
+                  </div> -->
+              </div>
+              <div class="card-body">
+                <h5 class="card-title newsTitle text-capitalize mb-3">{{item?.title}}</h5>
+                <p class="description">728 students of current batch (2019-2020) are already placed at top notch
+                  companies as on 8th January 2020.</p>
+              </div>
+              <div class="card-footer border-0 bg-transparent pb-3">
+                <div class="btn-group me-2" role="group" aria-label="Second group">
+                  <div id="outer">
+                    <a class="button_slide slide_right text-capitalize text-decoration-none">read more</a>
+                  </div>
+                  <!-- <a class="btn btn-news btn-lg text-uppercase lh-md">read more<i
+                        class="fas fa-chevron-right ms-2"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </ngx-slick-carousel>
+      </div>
+      <!-- <div class="row justify-content-center py-xl-3 py-lg-3 py-md-3 py-2">
+          <div class="col-xl-4 text-center">
+            <div class="btn-group me-2" role="group" aria-label="Second group">
+              <a class="btn btn-news btn-blogs btn-lg text-uppercase lh-lg">read all blogs<i
+                  class="fas fa-chevron-right ms-2"></i></a>
+            </div>
+          </div>
+        </div> -->
+    </div>
+  </div>
+  <!-- Our News Section End -->
 </div>

@@ -93,7 +93,7 @@ export class HomeComponent implements OnInit{
   };
 
   courseConfig = {
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow: "<div class='nav-btn next-slide'><i class='fas fa-arrow-right'></i></div>",
     prevArrow: "<div class='nav-btn prev-slide'><i class='fas fa-arrow-left'></i></div>",
@@ -157,8 +157,6 @@ export class HomeComponent implements OnInit{
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: false,
-          arrow: true
         }
       },
       {
@@ -179,11 +177,11 @@ export class HomeComponent implements OnInit{
   };
 
   partnerConfig = {
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
     nextArrow: "<div class='nav-btn next-slide'><i class='fas fa-chevron-right'></i></div>",
     prevArrow: "<div class='nav-btn prev-slide'><i class='fas fa-chevron-left'></i></div>",
-    arrow: true,
+    arrow: false,
     dots: false,
     infinite: true,
     autoplay: true,

@@ -11,7 +11,7 @@ footer {
       }
 
       a:hover i {
-        color: var(--primary-orange);
+        color: var(--primary-green);
       }
     }
   }
@@ -20,6 +20,11 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    .menuList{
+      h4 {
+        font-size: var(--font-22);
+      }
+    }
 
     ul {
       li.nav-item a {
@@ -30,7 +35,7 @@ footer {
       }
 
       li.nav-item a:hover,li.nav-item a:hover i {
-        color: var(--primary-orange);
+        color: var(--primary-green);
         transition: var(--transition);
       }
 
@@ -47,7 +52,7 @@ footer {
 
   .email-subscribe {
     .subscribe_text {
-      font-size: var(--font-20);
+      font-size: var(--font-22);
     }
 
     input {
@@ -64,30 +69,33 @@ footer {
     }
 
     a:hover .email {
-      color: var(--primary-orange);
+      color: var(--primary-green);
       animation: rotate 2s ease 0s infinite normal forwards;
     }
   }
 
   .copyright_section {
+    background-color: var(--primary-blue);
     p {
       color: var(--bs-white);
+      font-size: var(--font-14);
     }
 
     .list-unstyled {
       li {
         a {
-          background-color: var(--primary-orange);
+          // background-color: var(--primary-orange);
+          border: 1px solid var(--primary-green);
+          border-radius: var(--border-radius-5);
           height: 36px;
           width: 36px;
           display: flex;
           align-items: center;
           justify-content: center;
           text-decoration: none;
-          border-radius: 10px;
 
           i {
-            font-size: var(--font-22);
+            font-size: var(--font-18);
             color: var(--bs-white);
           }
         }
@@ -95,6 +103,7 @@ footer {
         a:hover {
           border-radius: 50%;
           transition: var(--transition);
+          background-color: var(--primary-green);
         }
       }
     }
@@ -105,7 +114,7 @@ footer {
     }
 
     .cmpName:hover {
-      color: var(--primary-orange);
+      color: var(--primary-green);
     }
   }
 }

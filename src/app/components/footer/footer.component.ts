@@ -8,7 +8,7 @@ import { MenuType } from './types';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  logo: any = './assets/imgs/biib-logo.png';
+  logo: any = './assets/imgs/BIIB-logo.webp';
 
   menu: Array<MenuType> = [
     // {
