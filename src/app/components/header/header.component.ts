@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { TokenInterceptor } from 'src/app/core/token.interceptor';
 import { DataService } from 'src/app/services/data.service';
 import { NotificationService } from 'src/app/services/notification.service';
@@ -10,8 +10,12 @@ import { MenuType } from './types';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit{
-constructor(public http: HttpClient, private notify: NotificationService, private dataService: DataService) {
+export class HeaderComponent implements OnInit, AfterViewInit{
+@ViewChild('box', { static: true }) box : ElementRef | any;
+constructor(
+  public http: HttpClient, 
+  private notify: NotificationService, 
+  private dataService: DataService) {
 
 }
   logo: string = './assets/imgs/BIIB-logo.webp';
@@ -170,6 +174,11 @@ constructor(public http: HttpClient, private notify: NotificationService, privat
     // await this.dataService.getData('products').subscribe(res => console.log(res), error => {
     //   this.notify.openFailureSnackBar(error)
     // });
+    // console.log(this.box);
   }
 
+  ngAfterViewInit(): void {
+    // console.log(this.box);
+    // this.box.nativeElement.style.backgroundColor="red";
+  }
 }

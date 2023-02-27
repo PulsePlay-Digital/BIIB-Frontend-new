@@ -27,7 +27,7 @@ import { LightboxModule } from 'ng-gallery/lightbox';
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

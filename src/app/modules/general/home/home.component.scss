@@ -1,20 +1,20 @@
-hr {
-  margin: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #37255F;
-  border: 0;
-  opacity: 1;
-  border-radius: 20px;
-}
+// hr {
+//   margin: 0;
+//   width: 100%;
+//   height: 4px;
+//   background-color: #37255F;
+//   border: 0;
+//   opacity: 1;
+//   border-radius: 20px;
+// }
 
-hr:after {
-  content: "";
-  display: block;
-  border-bottom: 5px solid #EA8833;
-  max-width: 30%;
-  border-radius: 20px;
-}
+// hr:after {
+//   content: "";
+//   display: block;
+//   border-bottom: 5px solid #EA8833;
+//   max-width: 30%;
+//   border-radius: 20px;
+// }
 
 .homePage {
 
@@ -97,10 +97,12 @@ hr:after {
   /** Main KPI Section **/
   .mainKpi {
     position: var(--position-relative);
+    background-color: #F9F9F9;
+
     .kpiImg {
       position: absolute;
       right: 0;
-      top: -18px;
+      top: 0;
     }
     .info {
       p {
@@ -111,56 +113,61 @@ hr:after {
       }
       h5 {
         font-size: var(--font-36);
-        font-weight: var(--font-600);
+        font-weight: var(--font-500);
         color: var(--primary-blue);
+        font-family: 'josefin-sans';
+    
       }
     }
   }
   /** Main KPI Section End **/
+
   /** About Us Section CSS **/
   .aboutSection {
-    .aboutImg {
-      .outerImg {
+    .vidSection {
+      height: 100%;
+      video {
         width: 100%;
-        height: 494px;
-        object-fit: cover;
+        height: 100%;
       }
-
-      .layerSection {
+    }
+    .aboutContent {
+      background-color: var(--primary-blue);
+      position: var(--position-relative);
+      .aboutBg{
         position: absolute;
-        top: 22px;
-        left: -26px;
-        width: 74px;
-        height: 451px;
-        background: var(--primary-blue);
+        right: 0;
+        top: 50%;
+        transform: translate(0%, -50%);
       }
-
-      .upperImg {
-        position: absolute;
-        top: 22px;
-        left: calc(100% - 142%);
-        width: 100%;
-        height: 210px;
-
-        img {
-          margin-top: 10px;
-        }
+      .aboutTitle {
+        font-family: 'Josefin Sans';
+        font-size: var(--font-36);
+        font-weight: var(--font-500);
+        color: var(--primary-green);
+        line-height: 46px;
       }
-
-      .bottomImg {
-        position: absolute;
-        bottom: 33px;
-        left: calc(100% - 142%);
-        width: 100%;
-        height: 210px;
-
-        img {
-          margin-bottom: 10px;
-        }
+      .description{
+        display: -webkit-box !important;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+        overflow: var(--overflow-H);
+        height: 154px;
+        line-height: 30px;
+        color: var(--bs-white);
+        line-height: 32px;
+      }
+      .aboutBtn {
+        background-color: var(--bs-white);
+        color: #2D2D2D;
+      }
+      .aboutBtn:hover{
+        background-color: var(--bs-white);
+        color: var(--bs-white);
       }
     }
   }
-
   /** About Us Section CSS End **/
 
   /** Thriving & KPI Section CSS **/
@@ -171,7 +178,7 @@ hr:after {
 
     .thrivingImg {
       position: absolute;
-      top: calc(100% - 125%);
+      top: calc(100% - 124%);
       left: calc(100% - 108%);
     }
     .card {
@@ -210,9 +217,12 @@ hr:after {
         font-size: var(--font-18);
         text-transform: uppercase;
       }
-
+      .title {
+        font-size: var(--font-18);
+        font-weight: var(--font-600);
+      }
       .description {
-        font-size: var(--font-15);
+        font-size: var(--font-16);
       }
     }
 
@@ -233,82 +243,6 @@ hr:after {
     }
   }
 
-  // .kpiSVG {
-  //   background-image: url(./../../../../assets/imgs/homeImages/kpiCircleDots.png);
-  //   height: 24%;
-  //   width: 300px;
-  //   position: absolute;
-  //   background-repeat: no-repeat;
-  //   bottom: 0;
-  //   left: 50%;
-  //   transform: translate(-50%, 0);
-  // }
-
-  // .KPI-section {
-  //   .kpiForm {
-  //     background-image: url(./../../../../assets/imgs/homeImages/kpiBlogBg.png);
-  //     height: var(--height-100);
-  //     background-repeat: no-repeat;
-  //     background-size: cover;
-
-  //     .btn-kpi {
-  //       background-color: var(--primary-blue);
-  //       width: var(--width-100);
-  //       color: var(--bs-white);
-  //     }
-
-  //     .btn-kpi:hover {
-  //       background-color: var(--primary-orange);
-  //     }
-  //   }
-
-  //   .kpiBlog {
-  //     background-image: url(./../../../../assets/imgs/homeImages/kpiBg.webp);
-  //     height: var(--height-100);
-  //     background-repeat: no-repeat;
-  //     background-size: cover;
-
-  //     .counter {
-  //       display: var(--display-flex);
-  //       align-items: var(--align-center);
-  //       height: var(--height-100);
-  //       .col-01 { border-bottom: 1px solid var(--bs-white); border-right: 1px solid var(--bs-white);}
-  //       .col-02 { border-bottom: 1px solid var(--bs-white);}
-  //       .col-03 { border-right: 1px solid var(--bs-white);}
-  //       .column {
-  //         flex: 50%;
-
-  //         .info {
-  //           span i {
-  //             font-size: 32px;
-  //           }
-  //           h4 {
-  //             font-size: 36px;
-  //           }
-  //           .description {
-  //             text-transform: uppercase;
-  //             font-size: 18px;
-  //           }
-  //         }
-  //       }
-
-  //       /* On screens that are 992px wide or less, go from four columns to two columns */
-  //       @media screen and (max-width: 992px) {
-  //         .column {
-  //           flex: 50%;
-  //         }
-  //       }
-
-  //       /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-  //       @media screen and (max-width: 575px) {
-  //         .row {
-  //           flex-direction: column;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-
   /** Thriving & KPI section CSS End **/
 
   /** Why BIIB CSS **/
@@ -321,11 +255,15 @@ hr:after {
         }
       }
       .title {
-        font-family: 'Playfair Display';
+        font-family: 'josefin-sans';
         color: var(--primary-blue);
         font-size: var(--font-24);
         font-weight: var(--font-600);
         line-height: 30px;
+      }
+      .description {
+        color: var(--primary-blue);
+        font-weight: var(--font-400);
       }
     }
     // .card {
@@ -380,59 +318,9 @@ hr:after {
 
   /** Why BIIB section CSS End **/
 
-  /** Query Section CSS **/
-  .querySection {
-    background-color: #EDF6FF;
-
-    .wrapperLeft {
-      content: url(./../../../../assets/imgs/homeImages/leftQuestion.png);
-      position: absolute;
-      left: calc(100% - 93%);
-    }
-
-    .wrapperRight {
-      content: url(./../../../../assets/imgs/homeImages/rightQuestion.png);
-      position: absolute;
-      right: calc(100% - 93%);
-    }
-
-    .question {
-      font-size: var(--font-24);
-      color: var(--primary-orange);
-    }
-
-    h4 {
-      font-size: 36px;
-    }
-
-    .or {
-      font-size: 36px;
-      color: var(--primary-orange);
-    }
-
-    .btn-contact {
-      border: 1px solid var(--primary-blue);
-      color: var(--bs-white);
-      border-radius: 5px;
-      font-size: 16px;
-      background-color: var(--primary-blue);
-    }
-
-    .btn-contact:hover {
-      border: 1px solid var(--primary-blue);
-      background-color: var(--bs-white);
-      color: var(--primary-blue);
-      transition: var(--transition);
-
-      i {
-        animation: slide 1s ease 0s 1 normal none;
-      }
-    }
-  }
-  /** Query Section CSS End**/
-
   /** Courses Section CSS **/
   .courses {
+    background-color: #F9F9F9;
     .coursesImg {
       img {
         height: 320px;
@@ -460,8 +348,9 @@ hr:after {
     .card-body {
       .courseTitle {
         color: var(--primary-blue);
-        font-size: var(--font-18);
+        font-size: var(--font-20);
         height: 50px;
+        font-weight: var(--font-600);
       }
 
       p {
@@ -470,6 +359,7 @@ hr:after {
         -webkit-box-orient: vertical;
         white-space: normal;
         overflow: hidden;
+        color: #3F3F3F;
       }
     }
 
@@ -495,90 +385,6 @@ hr:after {
   }
   /** Courses Section CSS End **/
 
-  /** Testimonial Section Css **/
-  .testimonial {
-    .testimonialLeft {
-      height: 100%;
-
-      img {
-        height: 520px;
-        width: 100%;
-        object-fit: cover;
-      }
-    }
-
-    .testimonialRight {
-      position: relative;
-      height: 100%;
-      width: 100%;
-
-      img {
-        height: 520px;
-        width: 100%;
-      }
-
-      .contentdiv {
-        position: absolute;
-        top: 50%;
-        left: 0%;
-        transform: translate(-12%, -50%);
-        width: 100%;
-
-        .card {
-          .card-body {
-            .card-heading {
-              p {
-                font-size: 16px;
-              }
-
-              h3 {
-                font-size: 36px;
-                color: var(--primary-blue);
-              }
-            }
-
-            .card-description {
-              p {
-                display: -webkit-box !important;
-                -webkit-line-clamp: 5;
-                -webkit-box-orient: vertical;
-                white-space: normal;
-                overflow: hidden;
-                height: 120px;
-              }
-            }
-
-            .studentInfo {
-              .description {
-                img {
-                  width: 48px;
-                  height: 48px;
-                }
-
-                .user {
-
-                  p,
-                  span {
-                    font-size: 14px;
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        .testimonialCarousel {
-          .slick-dots {
-            bottom: 0px;
-            display: flex !important;
-            justify-content: end !important;
-          }
-        }
-      }
-    }
-  }
-
-  /** Testimonial Section Css End **/
   /** News Section CSS **/
   .news {
     .newImg {
@@ -611,6 +417,7 @@ hr:after {
         line-height: 30px;
         height: 60px;
         overflow: var(--overflow-H);
+        font-weight: var(--font-600);
       }
       .description {
         display: -webkit-box !important;
@@ -618,7 +425,9 @@ hr:after {
         -webkit-box-orient: vertical;
         white-space: normal;
         overflow: hidden;
-        height: 70px;
+        height: 78px;
+        line-height: 28px;
+        color: #3F3F3F;
       }
     }
 
@@ -664,75 +473,56 @@ hr:after {
 
   /** Top Brass CSS **/
   .topBrass {
-    background: rgba(165, 165, 165, 0.2);
-
-    .card-footer {
-      background-color: var(--primary-orange);
-
-      p {
-        display: var(--display-flex);;
-        align-items: var(--align-center);;
-        justify-content: var(--justify-content-center);
-        height: 48px;
+    .card {
+      box-shadow: 0px 0px 7px rgba(119, 119, 119, 0.21);
+      .teamImg {
+        img {
+          clip-path: circle(40.0% at 50% 50%);
+          object-fit: cover;
+        }
       }
-    }
-
-    .feature_banner {
-      position: var(--position-relative);
-      height: var(--height-100);
-      width: var(--width-100);
-      cursor: var(--cursor-pointer);
-
-      .featured_hide {
-        position: var(--position-absolute);
-        top: var(--top-0);
-        bottom: var(--bottom-0);
-        left: var(--left-0);
-        right: var(--right-0);
-        background: var(--primary-orange);
-        color: var(--bs-white);
-        visibility: hidden;
-        opacity: var(--opacity-0);
-        display: var(--display-flex);
-        align-items: var(--align-center);
-        flex-direction: var(--flex-dir-col);
-        text-align: var(--text-C);
-        justify-content: var(--justify-content-center);
-        height: 0px;
-
-        h6 {
+      .card-body {
+        .line {
+          height: 2px;
+          width: 100%;
+          background-color: var(--primary-blue);
+        }
+        .card-title {
           color: var(--primary-blue);
+          height: 36px;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           font-size: var(--font-16);
-        }
-        .description {
-          text-transform: var(--text-uppercase);
+          justify-content: center;
           font-weight: var(--font-600);
-          font-size: var(--font-14);
+          line-height: 20px;
         }
-
-        hr:after {
-          border-bottom: 5px solid var(--primary-blue);
+        .card-text {
+          color: #484848;
+          font-size: var(--font-14);
+          display: -webkit-box !important;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          white-space: normal;
+          overflow: hidden;
+          height: 66px;
+          p {
+            color: #484848;
+          }
         }
       }
     }
-
-    .feature_banner:hover .featured_hide {
-      visibility: visible;
-      opacity: 1;
-      height: var(--height-100);
-      top: initial;
-      bottom: var(--bottom-0);
-      transition: height .4s;
-      overflow: var(--overflow-H);
-      padding: 10px;
-      position: var(--position-absolute);
-      background: var(--primary-orange);
+    .card:hover {
+      background-color: var(--primary-blue);
+      transition: var(--transition);
+    }
+    .card:hover .card-body .line {
+      background-color: var(--bs-white);
+    } 
+    .card:hover .card-body .card-title, .card:hover .card-body .card-text {
       color: var(--bs-white);
-      display: var(--display-flex);
-      align-items: var(--align-center);
-      flex-direction: var(--flex-dir-col);
-      text-align: var(--text-C);
-      justify-content: var(--justify-content-center);
     }
   }
   /** Top Brass CSS End**/
@@ -772,7 +562,8 @@ hr:after {
         }
         .eventTitle {
           font-size: var(--font-24);
-          line-height: 32px
+          line-height: 32px;
+          font-weight: var(--font-600);
         }
         .description {
           display: -webkit-box !important;
@@ -800,6 +591,88 @@ hr:after {
   /** Events Section End **/
   /** Campus Gallery Section CSS **/
   .campusGallery {
+    background-color:#F9F9F9;
+    .carousel {
+      position: relative;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      .carousel__body {
+          width: 100%;
+          padding: 20px 0 50px 0;
+          overflow: hidden;
+          .carousel__prev{
+              position: absolute;
+              bottom: -15%;
+              transition: transform 0.5s ease;
+              i {
+                  font-size: 60px;
+                  color: var(--box-border);
+                  cursor: pointer;
+              }
+          }
+          .carousel__next{
+              position: absolute;
+              bottom: -15%;
+              transition: transform 0.5s ease;
+              i {
+                  font-size: 60px;
+                  color: var(--box-border);
+                  cursor: pointer;
+              }
+          }
+          .carousel__slider{
+              position: relative;
+              transition: transform 1s ease-in-out;
+              .carousel__slider__item{
+                  position: relative;
+                  display: block;
+                  float: left;
+                  box-sizing: border-box;
+                  margin-left: 20px;
+                  margin-right: 20px;
+                  .item__3d-frame {
+                      position: relative;
+                      width: 100%;
+                      height: 100%;
+                      transition: transform 1s ease-in-out;
+                      -webkit-transform-style: preserve-3d;
+                      transform-style: preserve-3d;
+                  }
+                  .item__3d-frame:after {
+                      content: "";
+                      position: absolute;
+                      bottom: -15%;
+                      width: 100%;
+                      height: 40px;
+                      background: var(--box-shadow);
+                      box-shadow: 0px 0px 5px 5px var(--box-shadow);
+                      transform: rotateX(90deg) translate3d(0px, -20px, 0px);
+                      opacity: 0.85;
+                  }
+                  .item__3d-frame__box{
+                      display: flex;
+                      align-items: center;
+                      vertical-align: middle;
+                      text-align: center;
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      box-sizing: border-box;
+                      border-color: var(--box-border);
+                      background: var(--box-bg);
+                      border-width: 3px;
+                      border-style: solid;
+                      h1 {
+                          font-size: 7em;
+                          width: 100%;
+                          color: var(--box-border);
+                      }
+                  }
+              }
+          }
+      }
+    }
     .gal {
       -webkit-column-count: 3;
       /* Chrome, Safari, Opera */
@@ -858,8 +731,9 @@ hr:after {
   /** Partner Section CSS **/
   .partnerLog {
     .heading {
-      font-size: 18px;
-      font-weight: 500;
+      font-size: var(--font-20);
+      font-weight: var(--font-600);
+      color: var(--primary-blue);
     }
   }
 
@@ -998,6 +872,9 @@ hr:after {
       }
     }
   }
+
+
+
 }
 
 @media only screen and (min-width: 575px) and (max-width: 767px) {
@@ -1124,3 +1001,5 @@ hr:after {
     }
   }
 }
+
+

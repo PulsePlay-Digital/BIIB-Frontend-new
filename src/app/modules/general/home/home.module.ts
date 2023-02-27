@@ -7,7 +7,8 @@ import { LightboxModule } from  'ng-gallery/lightbox';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,

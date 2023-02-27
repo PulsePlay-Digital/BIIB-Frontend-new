@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DataService } from './../../../services/data.service';
 import { environment } from '../../../../environments/environment';
 import { SeoService } from '../../../services/seo/seo.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TokenInterceptor } from 'src/app/core/token.interceptor';
 import { NotificationService } from 'src/app/services/notification.service';
 import { Gallery } from 'ng-gallery';
 
@@ -12,7 +11,9 @@ import { Gallery } from 'ng-gallery';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit, AfterViewInit{
+  @ViewChild('box', { static: true }) box : ElementRef | any;
+  // @ViewChild('video') video: ElementRef | any;
   model: any;
   allHomeData: any;
   imgPath = environment?.imgPath;
@@ -20,13 +21,28 @@ export class HomeComponent implements OnInit{
   submitted: boolean = false;
   loading: boolean = false;
   kpis: any;
+  
+  // carousel: any;
+  // slider: any;
+  // items: any;
+  // prevBtn: any;
+  // nextBtn: any;
+
+  // width: number= 20;
+  // height: number = 20;
+  // totalWidth: number = 20;
+  // margin: number = 20;
+  // currIndex: number = 0;
+  // interval: number = 2000;
+  // intervalTime: number = 2000;
 
   constructor(
     private seoService: SeoService, 
     private dataService: DataService, 
     private fb: FormBuilder,
     private notification: NotificationService,
-    private gallery: Gallery
+    private gallery: Gallery,
+    private elemRef : ElementRef
     ) {
     const content =
       'It applies Routing, Lazy loading and Progressive Web App (PWA)';
@@ -43,7 +59,7 @@ export class HomeComponent implements OnInit{
     nextArrow: "<div class='nav-btn next-slide d-xl-none d-lg-none'><i class='fas fa-arrow-right'></i></div>",
     prevArrow: "<div class='nav-btn prev-slide d-xl-none d-lg-none'><i class='fas fa-arrow-left'></i></div>",
     arrow: false,
-    dots: true,
+    dots: false,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -179,8 +195,8 @@ export class HomeComponent implements OnInit{
   partnerConfig = {
     slidesToShow: 5,
     slidesToScroll: 1,
-    nextArrow: "<div class='nav-btn next-slide'><i class='fas fa-chevron-right'></i></div>",
-    prevArrow: "<div class='nav-btn prev-slide'><i class='fas fa-chevron-left'></i></div>",
+    nextArrow: "<div class='nav-btn next-slide d-none'><i class='fas fa-chevron-right'></i></div>",
+    prevArrow: "<div class='nav-btn prev-slide d-none'><i class='fas fa-chevron-left'></i></div>",
     arrow: false,
     dots: false,
     infinite: true,
@@ -214,7 +230,88 @@ export class HomeComponent implements OnInit{
   async ngOnInit () {
     this.buildQueryForm(); 
     this.getAllData();
+  
+    setTimeout(() => {
+      // this.carousel = document.getElementsByClassName("galleryCarousel")[0];
+      // this.slider = this.carousel.getElementsByClassName('carousel__slider')[0];
+      // this.items = this.carousel.getElementsByClassName('carousel__slider__item');
+      // this.prevBtn = this.carousel.getElementsByClassName('carousel__prev')[0];
+      // this.nextBtn = this.carousel.getElementsByClassName('carousel__next')[0];
+      // this.resize();
+      // this.move(Math.floor(this.items.length / 2));
+      // this.bindEvents();
+      // this.timer();  
+    }, 1000);
+
   }
+
+  ngAfterViewInit(): void {
+    let data = document.getElementById('homepage') as HTMLElement | null;
+    console.log(data)
+    // console.log(this.box);
+    // console.log(this.elemRef.nativeElement.getElementsByClassName('homePage'));
+    // this.gCarousel.nativeElement.style.backgroundColor = "red";
+    // this.box.nativeElement.style.backgroundColor="red";
+  }
+ 
+
+// bindEvents() {
+//   window.onresize = this.resize;
+//   this.prevBtn.addEventListener('click', () => { this.prev(); });
+//   this.nextBtn.addEventListener('click', () => { this.next(); });    
+// }
+
+// resize() {
+//   let width = Math.max(window.innerWidth * .25, 275);
+//   let height = window.innerHeight * .5;
+//   let totalWidth = width * this.items.length;
+
+//   this.slider.style.width = totalWidth + "px";
+
+//   for(var i = 0; i < this.items.length; i++) {
+//       let item = this.items[i];
+//       item.style.width = (width - (this.margin * 2)) + "px";
+//       item.style.height = height + "px";
+//   }
+// }
+
+// move(index: any) {
+//   if(index < 1) index = this.items.length;
+//   if(index > this.items.length) index = 1;
+//   this.currIndex = index;
+
+//   for(var i = 0; i < this.items.length; i++) {
+//       let item = this.items[i],
+//           box = item.getElementsByClassName('item__3d-frame')[0];
+//       if(i == (index - 1)) {
+//           item.classList.add('carousel__slider__item--active');
+//           box.style.transform = "perspective(1200px)"; 
+//       } else {
+//         item.classList.remove('carousel__slider__item--active');
+//           box.style.transform = "perspective(1200px) rotateY(" + (i < (index - 1) ? 40 : -40) + "deg)";
+//       }
+//   }
+
+//   this.slider.style.transform = "translate3d(" + ((index * -this.width) + (this.width / 2) + window.innerWidth / 2) + "px, 0, 0)";
+// }
+
+// timer() {
+//   clearInterval(this.interval);    
+//   // interval = setInterval(() => {
+//   //   this.move(++this.currIndex);
+//   // }, this.intervalTime);    
+// }
+
+// prev() {
+//   this.move(--this.currIndex);
+//   this.timer();
+// }
+
+// next() {
+//   this.move(++this.currIndex);    
+//   this.timer();
+// }
+
 
   buildQueryForm() {
     this.queryForm = this.fb.group({
@@ -240,6 +337,8 @@ export class HomeComponent implements OnInit{
     await this.dataService.getData(action).subscribe((res: any) => {
       this.allHomeData = res?.data;
       this.kpis = this.allHomeData?.Kpi;
+      this.loading = false;
+    }, error => {
       this.loading = false;
     })
   }
