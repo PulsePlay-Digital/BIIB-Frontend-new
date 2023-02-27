@@ -11,9 +11,7 @@ import { Gallery } from 'ng-gallery';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit{
-  @ViewChild('box', { static: true }) box : ElementRef | any;
-  // @ViewChild('video') video: ElementRef | any;
+export class HomeComponent implements OnInit, AfterViewInit {
   model: any;
   allHomeData: any;
   imgPath = environment?.imgPath;
@@ -21,29 +19,29 @@ export class HomeComponent implements OnInit, AfterViewInit{
   submitted: boolean = false;
   loading: boolean = false;
   kpis: any;
-  
-  // carousel: any;
-  // slider: any;
-  // items: any;
-  // prevBtn: any;
-  // nextBtn: any;
 
-  // width: number= 20;
-  // height: number = 20;
-  // totalWidth: number = 20;
-  // margin: number = 20;
-  // currIndex: number = 0;
-  // interval: number = 2000;
-  // intervalTime: number = 2000;
+  carousel: any;
+  slider: any;
+  items: any;
+  prevBtn: any;
+  nextBtn: any;
+
+  width: number = 20;
+  height: number = 20;
+  totalWidth: number = 20;
+  margin: number = 20;
+  currIndex: number = 0;
+  interval: any = 2000;
+  intervalTime: number = 2000;
 
   constructor(
-    private seoService: SeoService, 
-    private dataService: DataService, 
+    private seoService: SeoService,
+    private dataService: DataService,
     private fb: FormBuilder,
     private notification: NotificationService,
     private gallery: Gallery,
-    private elemRef : ElementRef
-    ) {
+    private elemRef: ElementRef
+  ) {
     const content =
       'It applies Routing, Lazy loading and Progressive Web App (PWA)';
 
@@ -52,6 +50,19 @@ export class HomeComponent implements OnInit, AfterViewInit{
     this.seoService.setMetaDescription(content);
     this.seoService.setMetaTitle(title);
   }
+  bannerConfig = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: "<div class='nav-btn next-slide'></div>",
+    prevArrow: "<div class='nav-btn prev-slide'></div>",
+    arrow: false,
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    fade: true,
+    cssEase: 'linear'
+  };
 
   leadershipConfig = {
     slidesToShow: 4,
@@ -151,7 +162,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
   };
 
   newsConfig = {
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     nextArrow: "<div class='nav-btn next-slide'><i class='fas fa-arrow-right'></i></div>",
     prevArrow: "<div class='nav-btn prev-slide'><i class='fas fa-arrow-left'></i></div>",
@@ -227,90 +238,102 @@ export class HomeComponent implements OnInit, AfterViewInit{
     ]
   };
 
-  async ngOnInit () {
-    this.buildQueryForm(); 
-    this.getAllData();
-  
-    setTimeout(() => {
-      // this.carousel = document.getElementsByClassName("galleryCarousel")[0];
-      // this.slider = this.carousel.getElementsByClassName('carousel__slider')[0];
-      // this.items = this.carousel.getElementsByClassName('carousel__slider__item');
-      // this.prevBtn = this.carousel.getElementsByClassName('carousel__prev')[0];
-      // this.nextBtn = this.carousel.getElementsByClassName('carousel__next')[0];
-      // this.resize();
-      // this.move(Math.floor(this.items.length / 2));
-      // this.bindEvents();
-      // this.timer();  
-    }, 1000);
+  bannerData = [
+    {
+      id:1,
+      name: "Chief Guest - S. V. Nathan",
+      designation: "Partner and Chief Talent Officer at Deloitte India",
+      purpose:"Convocation MBA Batch 2020-2022",
+      file:"/assets/imgs/homeImages/banner1.png"
+    },
+    {
+      id:2,
+      name: "Shri Nitin Gadkari Ji",
+      designation: "Minister of Road Transport & Highways, Government of India",
+      purpose:"Convocation MBA Batch 2020-2022",
+      file:"/assets/imgs/homeImages/banner2.png"
+    }
+  ]
 
+  async ngOnInit() {
+    this.buildQueryForm();
+    this.getAllData();
   }
 
   ngAfterViewInit(): void {
-    let data = document.getElementById('homepage') as HTMLElement | null;
-    console.log(data)
-    // console.log(this.box);
-    // console.log(this.elemRef.nativeElement.getElementsByClassName('homePage'));
-    // this.gCarousel.nativeElement.style.backgroundColor = "red";
-    // this.box.nativeElement.style.backgroundColor="red";
+    setTimeout(() => {
+      this.carousel = document.getElementById('gallerySlider') as HTMLElement | null;
+      this.slider = this.carousel.getElementsByClassName('carousel__slider')[0];
+      this.items = this.carousel.getElementsByClassName('carousel__slider__item');
+      this.prevBtn = this.carousel.getElementsByClassName('carousel__prev')[0],
+      this.nextBtn = this.carousel.getElementsByClassName('carousel__next')[0];
+
+
+      this.resize();
+      this.move(Math.floor(this.items.length / 2));
+      this.bindEvents();
+      this.timer();
+    }, 3000);
   }
- 
 
-// bindEvents() {
-//   window.onresize = this.resize;
-//   this.prevBtn.addEventListener('click', () => { this.prev(); });
-//   this.nextBtn.addEventListener('click', () => { this.next(); });    
-// }
 
-// resize() {
-//   let width = Math.max(window.innerWidth * .25, 275);
-//   let height = window.innerHeight * .5;
-//   let totalWidth = width * this.items.length;
+  bindEvents() {
+    window.onresize = this.resize;
+    this.prevBtn.addEventListener('click', () => { this.prev(); });
+    this.nextBtn.addEventListener('click', () => { this.next(); });
+  }
 
-//   this.slider.style.width = totalWidth + "px";
+  resize() {
+    this.width = Math.max(window.innerWidth * .20, 275);
+    this.height = window.innerHeight * .5;
+    this.totalWidth = this.width * this.items.length;
 
-//   for(var i = 0; i < this.items.length; i++) {
-//       let item = this.items[i];
-//       item.style.width = (width - (this.margin * 2)) + "px";
-//       item.style.height = height + "px";
-//   }
-// }
+    this.slider.style.width = this.totalWidth + "px";
 
-// move(index: any) {
-//   if(index < 1) index = this.items.length;
-//   if(index > this.items.length) index = 1;
-//   this.currIndex = index;
+    for (var i = 0; i < this.items.length; i++) {
+      let item = this.items[i];
+      item.style.width = (this.width - (this.margin * 2)) + "px";
+      item.style.height = this.height + "px";
+    }
+  }
 
-//   for(var i = 0; i < this.items.length; i++) {
-//       let item = this.items[i],
-//           box = item.getElementsByClassName('item__3d-frame')[0];
-//       if(i == (index - 1)) {
-//           item.classList.add('carousel__slider__item--active');
-//           box.style.transform = "perspective(1200px)"; 
-//       } else {
-//         item.classList.remove('carousel__slider__item--active');
-//           box.style.transform = "perspective(1200px) rotateY(" + (i < (index - 1) ? 40 : -40) + "deg)";
-//       }
-//   }
+  move(index: any) {
+    if (index < 1) index = this.items.length;
+    if (index > this.items.length) index = 1;
+    this.currIndex = index;
 
-//   this.slider.style.transform = "translate3d(" + ((index * -this.width) + (this.width / 2) + window.innerWidth / 2) + "px, 0, 0)";
-// }
+    for (var i = 0; i < this.items.length; i++) {
+      let item = this.items[i],
+        box = item.getElementsByClassName('item__3d-frame')[0];
+      if (i == (index - 1)) {
+        item.classList.add('carousel__slider__item--active');
+        box.style.transform = "perspective(1200px)";
+        item.style.width = (this.width - (this.margin * 3)) + "px";
+        item.style.height = this.height + "px";
+      } else {
+        item.classList.remove('carousel__slider__item--active');
+        box.style.transform = "perspective(1200px) rotateY(" + (i < (index - 1) ? 40 : -40) + "deg)";
+      }
+    }
+    this.slider.style.transform = "translate3d(" + ((index * -this.width) + (this.width / 2) + window.innerWidth / 2) + "px, 0, 0)";
+  }
 
-// timer() {
-//   clearInterval(this.interval);    
-//   // interval = setInterval(() => {
-//   //   this.move(++this.currIndex);
-//   // }, this.intervalTime);    
-// }
+  timer() {
+    clearInterval(this.interval);
+    this.interval = setInterval(() => {
+      this.move(++this.currIndex);
+    }, this.intervalTime);
+  }
 
-// prev() {
-//   this.move(--this.currIndex);
-//   this.timer();
-// }
+  prev() {
+    this.move(--this.currIndex);
+    this.timer();
+  }
 
-// next() {
-//   this.move(++this.currIndex);    
-//   this.timer();
-// }
+  next() {
+    this.move(++this.currIndex);
+    this.timer();
+  }
 
 
   buildQueryForm() {
@@ -348,12 +371,12 @@ export class HomeComponent implements OnInit, AfterViewInit{
    */
   async onSubmit() {
     this.submitted = true;
-    if(this.queryForm.invalid) {
+    if (this.queryForm.invalid) {
       return;
     } else {
       let action = "enquiries";
       await this.dataService.postData(action, this.queryForm?.value).subscribe((res: any) => {
-        if(res?.status == 200) {
+        if (res?.status == 200) {
           this.notification.openSuccessAlert(res?.message);
         }
       }, error => {

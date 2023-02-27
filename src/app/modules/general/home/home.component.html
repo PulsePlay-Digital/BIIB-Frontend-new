@@ -1,47 +1,64 @@
 <style>
-   .galleryCarousel {
+  .galleryCarousel {
     position: relative;
-    display: block;
+    /* display: block;
     width: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box; */
   }
-  .carousel__prev, .carousel__next {
+
+  .carousel__prev,
+  .carousel__next {
     position: absolute;
     bottom: -15%;
     transition: transform 0.25s ease;
   }
-  .carousel__prev i, .carousel__next i {
-    font-size: 60px;
-    color: var(--box-border);
+
+  .carousel__prev i,
+  .carousel__next i {
+    font-size: 22px;
+    /* color: var(--box-border); */
     cursor: pointer;
+    background: var(--bs-white);
+    padding: 18px;
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
+    line-height: 0;
   }
-  .carousel__prev:hover, .carousel__next:hover {
+
+  .carousel__prev:hover,
+  .carousel__next:hover {
     transform: scale(1.04);
   }
+
   .carousel__prev {
     left: 40%;
   }
+
   .carousel__next {
     right: 40%;
   }
+
   .carousel__body {
     width: 100%;
     padding: 20px 0 50px 0;
     overflow: hidden;
   }
+
   .carousel__body .carousel__slider {
     position: relative;
     transition: transform 1s ease-in-out;
-    background: var(--crsl-bg);
+    /* background: var(--crsl-bg); */
   }
+
   .carousel__body .carousel__slider__item {
     position: relative;
     display: block;
     float: left;
     box-sizing: border-box;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-right: 20px;
   }
+
   .carousel__body .carousel__slider__item .item__3d-frame {
     position: relative;
     width: 100%;
@@ -50,17 +67,19 @@
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
+
   .carousel__body .carousel__slider__item .item__3d-frame:after {
     content: "";
     position: absolute;
     bottom: -15%;
     width: 100%;
     height: 40px;
-    background: var(--box-shadow);
-    box-shadow: 0px 0px 5px 5px var(--box-shadow);
+    /* background: var(--box-shadow); */
+    /* box-shadow: 0px 0px 5px 5px var(--box-shadow); */
     transform: rotateX(90deg) translate3d(0px, -20px, 0px);
     opacity: 0.85;
   }
+
   .carousel__body .carousel__slider__item .item__3d-frame__box {
     display: flex;
     align-items: center;
@@ -70,53 +89,75 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border-color: var(--box-border);
-    background: var(--box-bg);
-    border-width: 3px;
-    border-style: solid;
+    border: 1px solid var(--primary-blue);
+    box-shadow: 0px 0px 15px 1px rgb(25, 47, 89);
   }
+
   .carousel__body .carousel__slider__item .item__3d-frame__box h1 {
     font-size: 7em;
     width: 100%;
-    color: var(--box-border);
+    /* color: var(--box-border); */
   }
-  .carousel__body .carousel__slider__item .item__3d-frame__box h1 img{
+
+  .carousel__body .carousel__slider__item .item__3d-frame__box h1 img {
     width: 100%;
     height: 180px;
   }
+
+  .carousel__body .carousel__slider__item--active .item__3d-frame .item__3d-frame__box h1 img {
+    height: 260px;
+    transition: all 2s ease;
+  }
 </style>
 <app-loader *ngIf="loading"></app-loader>
-<div class="homePage" id="homepage" *ngIf="!loading" #box>
+<div class="homePage" id="homepage" *ngIf="!loading">
   <!-- Hero Section -->
-  <div class="bannerImg">
-    <div class="layer h-100 d-flex align-items-end">
-      <div class="container">
-        <div class="row py-xl-5 py-lg-5 py-md-5 py-sm-5 py-4">
-          <div class="col-xl-7 col-lg-7 col-md-12">
-            <div class="heroBanner">
-              <h5 class="text-uppercase muted-text">Thriving for Excellence</h5>
-              <h4 class="sectionText text-uppercase">New Dimension in Education</h4>
-              <p class="">SBUP (BIIB, BIMM, BITM, BIMHRD) ranked as one amongst Top 11 B – Schools in the country</p>
-            </div>
-            <div
-              class="row py-xl-2 py-lg-2 justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-sm-start justify-content-center">
-              <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-sm-5 col-6">
-                <!-- <a class="btn btn-hero text-uppercase w-100 lh-lg">Apply Now <span><i class="fa-solid fa-arrow-pointer"></i></span></a> -->
-                <!-- <div class="heroBtn">
-                  <a class="btn text-uppercase w-100 p-2 lh-lg">Apply Now <span><i
-                        class="fas fa-hand-pointer"></i></span></a>
-                  <div class="overlay">
-                    <div class="icon"><i class="fas fa-hand-pointer"></i></div>
-                  </div>
-                </div> -->
-                <div id="outer">
-                  <div class="button_slide slide_right text-capitalize">Apply Now</div>
+  <!-- <div class="homeBanner">
+     <div class="bannerImg">
+     </div>
+     <div class="shapeImg"></div>
+  </div> -->
+  <div class="heroBanner">
+    <!-- <div class="bannerImg">
+      <div class="layer d-flex align-items-end">
+        <div class="container">
+          <div class="row py-xl-5 py-lg-5 py-md-5 py-sm-5 py-4">
+            <div class="col-xl-7 col-lg-7 col-md-12">
+              <ngx-slick-carousel class="carousel mb-xl-0 mb-lg-0 mb-md-0 mb-sm-2 mb-5 partnerLogo"
+                #slickModal="slick-carousel" [config]="partnerConfig">
+                <div ngxSlickItem *ngFor="let item of allHomeData?.Recruiter" class="slide px-2">
+                  <img class="card-img-top" [src]="imgPath + item?.featured_image" alt="logo">
                 </div>
-              </div>
+              </ngx-slick-carousel>
             </div>
           </div>
         </div>
       </div>
+    </div> -->
+    <ngx-slick-carousel class="carousel mb-xl-0 mb-lg-0 mb-md-0 mb-sm-2 mb-5 partnerLogo" #slickModal="slick-carousel"
+    [config]="bannerConfig">
+    <div class="bannerImg slide"  ngxSlickItem
+      *ngFor="let item of bannerData">
+      <div class="layer d-flex align-items-end">
+        <div class="container">
+          <div class="row py-xl-5 py-lg-5 py-md-5 py-sm-5 py-4 shadowText">
+            <div class="col-xl-7 col-lg-7 col-md-12">
+
+              <div class="heroBanner">
+                <h5 class="muted-text">{{item?.purpose}}</h5>
+                <h4 class="sectionText text-capitalize">{{item?.name}} -</h4>
+                <p class="">{{item?.designation}}</p>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ngx-slick-carousel>
+    <div class="shapeImg">
+      <img src="./../../../../assets/imgs/homeImages/shapes.png">
     </div>
   </div>
   <!-- Hero Section End -->
@@ -298,66 +339,71 @@
   </div>
   <!-- Thriving for Excellence END -->
 
-   <!-- Campus Gallery Section -->
-   <div class="campusGallery">
+  <!-- Campus Gallery Section -->
+  <div class="campusGallery">
     <div class="container">
       <div class="row justify-content-center my-xl-5 my-lg-5 my-md-4 my-sm-4 my-3">
         <div class="col-12 pb-2 text-center">
           <h4 class="main-heading text-capitalize">gallery</h4>
         </div>
       </div>
-  <!-- <div #box></div> -->
-      <div class="galleryCarousel">
+      <div class="galleryCarousel mb-xl-5 mb-lg-5 mb-md-4 mb-4" id="gallerySlider">
         <div class="carousel__body">
-          <div class="carousel__prev">Prev < <i class="fas fa-angle-left"></i></div>
-          <div class="carousel__next">Next ><i class="fas fa-angle-right"></i></div>
-          <div class="carousel__slider">
-            <div class="carousel__slider__item">
+          <div class="carousel__prev" id="carousel__prev"><i class='fas fa-arrow-left'></i></div>
+          <div class="carousel__next" id="carousel__next"><i class='fas fa-arrow-right'></i></div>
+          <div class="carousel__slider" id="carousel__slider">
+            <div class="carousel__slider__item" id="carousel__slider__item">
               <div class="item__3d-frame">
                 <div class="item__3d-frame__box item__3d-frame__box--front">
-                  <h1><img src="http://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/img/car_1.png"  ></h1>
+                  <h1><img
+                      src="http://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/img/car_1.png">
+                  </h1>
                 </div>
               </div>
             </div>
             <div class="carousel__slider__item">
               <div class="item__3d-frame">
                 <div class="item__3d-frame__box item__3d-frame__box--front">
-                  <h1><img src="http://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/img/tree_2.png"  ></h1>
+                  <h1><img
+                      src="http://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/img/tree_2.png">
+                  </h1>
                 </div>
               </div>
             </div>
             <div class="carousel__slider__item">
               <div class="item__3d-frame">
                 <div class="item__3d-frame__box item__3d-frame__box--front">
-                  <h1><img src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/NljADnB.png"  ></h1>
+                  <h1><img src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/NljADnB.png"></h1>
                 </div>
               </div>
             </div>
             <div class="carousel__slider__item">
               <div class="item__3d-frame">
                 <div class="item__3d-frame__box item__3d-frame__box--front">
-                  <h1><img src="http://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/img/start.png"  ></h1>
+                  <h1><img
+                      src="http://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/img/start.png">
+                  </h1>
                 </div>
               </div>
             </div>
             <div class="carousel__slider__item">
               <div class="item__3d-frame">
                 <div class="item__3d-frame__box item__3d-frame__box--front">
-                  <h1><img src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/HfReHl5.jpg"  ></h1>
+                  <h1><img src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/HfReHl5.jpg"></h1>
                 </div>
               </div>
             </div>
             <div class="carousel__slider__item">
               <div class="item__3d-frame">
                 <div class="item__3d-frame__box item__3d-frame__box--front">
-                  <h1><img src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/NljADnB.png"  ></h1>
+                  <h1><img src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/NljADnB.png"></h1>
                 </div>
               </div>
             </div>
             <div class="carousel__slider__item">
               <div class="item__3d-frame">
                 <div class="item__3d-frame__box item__3d-frame__box--front">
-                  <h1><img src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/NljADnB.png"  ></h1>
+                  <h1><img src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/NljADnB.png"></h1>
                 </div>
               </div>
             </div>
@@ -382,14 +428,14 @@
           </div>
         </div>
       </div> -->
-      <div class="row justify-content-center py-xl-5 py-lg-5 py-md-5 py-4">
+      <!-- <div class="row justify-content-center py-xl-5 py-lg-5 py-md-5 py-4">
         <div class="col-xl-4 text-center">
           <div class="btn-group me-2" role="group" aria-label="Second group">
             <a class="btn btn-news btn-blogs btn-lg text-uppercase lh-lg">load more<i
                 class="fas fa-chevron-right ms-2"></i></a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- Campus Gallery Section End -->
@@ -661,8 +707,7 @@
   </div>
   <!-- Our News Section End -->
 </div>
-
-<script>
+<!-- <script>
   (function() {
 "use strict";
 
@@ -699,8 +744,7 @@ function resize() {
     }
 }
 
-function move(index) {
-  
+function move(index) {  
     if(index < 1) index = items.length;
     if(index > items.length) index = 1;
     currIndex = index;
@@ -747,4 +791,4 @@ function bindEvents() {
 init();
 
 })();
-</script>
+</script> -->

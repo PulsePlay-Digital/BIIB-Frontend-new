@@ -19,77 +19,97 @@
 .homePage {
 
   /** Hero Section CSS **/
-  .bannerImg {
-    background: url(./../../../../assets/imgs/homeImages/heroBanner.webp);
-    background-repeat: var(--background-no-repeat);
-    height: 80vh;
-    max-height: 100%;
-    background-size: cover;
-    position: var(--position-relative);
-    background-position: center;
+  .heroBanner{
+    position: relative;
+    overflow: hidden;
+    .bannerImg {
+      background: url(./../../../../assets/imgs/homeImages/banner1.png);
+      background-repeat: var(--background-no-repeat);
+      height: 100vh;
+      max-height: 100%;
+      background-size: cover;
+      position: var(--position-relative);
+      background-position: center;
 
-    .layer {
-      background: linear-gradient(90.15deg, rgba(0, 0, 0, 0.3) 0.13%, rgba(0, 0, 0, 0) 92.48%);
-    }
-
-    .heroBanner {
-      color: var(--bs-white);
-
-      .muted-text {
-        font-size: var(--font-16);
-        line-height: 24px;
-      }
-
-      .sectionText {
-        font-size: var(--font-40);
-        font-weight: var(--font-600);
-        line-height: 42px;
-      }
-
-      p {
-        font-size: 18px;
-        // font-family: sans-serif;
-      }
-    }
-
-    .heroBtn {
-      position: relative;
-      overflow: hidden;
-      border-radius: 5px;
-
-      .btn {
-        background-color: var(--primary-blue);
-        color: var(--bs-white);
-        display: block;
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-      }
-
-      .overlay {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        background-color: var(--primary-orange);
-        overflow: hidden;
-        width: 0;
-        height: 100%;
-        transition: .5s ease;
-
-        .icon {
-          color: var(--bs-white);
-          font-size: var(--font-18);
-          position: var(--position-absolute);
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-align: center;
+      .layer {
+        // background: linear-gradient(90.15deg, rgba(0, 0, 0, 0.3) 0.13%, rgba(0, 0, 0, 0) 92.48%);
+        height: 85%;
+        .shadowText {
+          background:radial-gradient(ellipse at 50% 50%, rgba(25, 47, 89, 1) 0%, rgba(25, 47, 89, 1) 1%, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%);
         }
       }
-    }
 
-    .heroBtn:hover .overlay {
+      .heroBanner {
+        color: var(--bs-white);
+
+        .muted-text {
+          font-size: var(--font-30);
+          line-height: 35px;
+        }
+
+        .sectionText {
+          font-family: 'josefin-sans';
+          font-size: var(--font-48);
+          font-weight: var(--font-600);
+          line-height: 60px;
+        }
+
+        p {
+          font-family: 'josefin-sans';
+          font-size: 24px;
+          line-height: 34px;
+          text-transform: capitalize;
+        }
+      }
+   
+      .heroBtn {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+
+        .btn {
+          background-color: var(--primary-blue);
+          color: var(--bs-white);
+          display: block;
+          width: 100%;
+          height: auto;
+          border-radius: 5px;
+        }
+
+        .overlay {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          background-color: var(--primary-orange);
+          overflow: hidden;
+          width: 0;
+          height: 100%;
+          transition: .5s ease;
+
+          .icon {
+            color: var(--bs-white);
+            font-size: var(--font-18);
+            position: var(--position-absolute);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+          }
+        }
+      }
+
+      .heroBtn:hover .overlay {
+        width: 100%;
+      }
+    }
+    .shapeImg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
       width: 100%;
+      img {
+        width: 100%;
+      }
     }
   }
 
