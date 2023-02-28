@@ -844,11 +844,20 @@
 @media only screen and (min-width: 300px) and (max-width: 574px) {
   .homePage{
     .bannerImg {
-      height: 300px;
+      height: 74vh !important;
       .heroBanner {
         text-align: center;
         .sectionText {
-          font-size: var(--font-28);
+          font-size: var(--font-28) !important;
+          line-height: normal !important;
+        }
+        .muted-text {
+          font-size: var(--font-22) !important;
+          line-height: normal !important;
+        }
+        p {
+          font-size: var(--font-18) !important;
+          line-height: normal !important;
         }
       }
     }

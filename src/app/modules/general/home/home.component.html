@@ -23,7 +23,7 @@
         </div>
       </div>
     </div> -->
-    <ngx-slick-carousel class="carousel mb-xl-0 mb-lg-0 mb-md-0 mb-sm-2 mb-5 bannerHome" #slickModal="slick-carousel"
+    <ngx-slick-carousel class="carousel mb-xl-0 mb-lg-0 mb-md-0 mb-sm-2 mb-0 bannerHome" #slickModal="slick-carousel"
     [config]="bannerConfig">
       <ng-container *ngFor="let item of bannerData">
         <div class="bannerImg slide" [style.background-image]="'url(' + imgPath + item?.file + ')'" ngxSlickItem>
