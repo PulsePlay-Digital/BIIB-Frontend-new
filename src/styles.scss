@@ -184,6 +184,34 @@ app-home {
   //     }
   //   }
   // }
+    .bannerHome {
+      .slick-dots {
+          position: absolute;
+          bottom: calc(100% - 80%);
+          list-style: none;
+          display: flex;
+          justify-content: flex-start;
+          padding: 0;
+          z-index: 999;
+          left: calc(100% - 93%);
+        li {
+          button {
+            width: 15px;
+            height: 15px;
+            background-color: var(--bs-white);
+            border-radius: 50%;
+          }
+          button:before {
+            color: transparent;
+          }
+        }
+        .slick-active {
+          button {
+            background-color: var(--primary-green);
+          }
+        }
+      }
+    }
 
   .courseSlider {
     .next-slide {
@@ -192,7 +220,7 @@ app-home {
       align-items: center;
       position: absolute;
       right: calc(100% - 98%);
-      top: calc(100% - 114%);
+      top: calc(100% - 118%);
       cursor: pointer;
 
       i {
@@ -218,7 +246,7 @@ app-home {
       align-items: center;
       position: absolute;
       right: calc(100% - 92%);
-      top: calc(100% - 114%);
+      top: calc(100% - 118%);
       cursor: pointer;
 
       i {

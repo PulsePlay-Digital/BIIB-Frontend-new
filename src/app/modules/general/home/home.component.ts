@@ -162,7 +162,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   };
 
   newsConfig = {
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow: "<div class='nav-btn next-slide'><i class='fas fa-arrow-right'></i></div>",
     prevArrow: "<div class='nav-btn prev-slide'><i class='fas fa-arrow-left'></i></div>",
@@ -244,7 +244,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       name: "Chief Guest - S. V. Nathan",
       designation: "Partner and Chief Talent Officer at Deloitte India",
       purpose:"Convocation MBA Batch 2020-2022",
-      file:"/assets/imgs/homeImages/banner1.png"
+      file:"/storage/files/Home/Rectangle%2018.png"
     },
     {
       id:2,
@@ -273,7 +273,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.move(Math.floor(this.items.length / 2));
       this.bindEvents();
       this.timer();
-    }, 3000);
+    }, 3500);
   }
 
 
@@ -383,5 +383,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.notification.openErrorAlert(error);
       })
     }
+  }
+
+  playAboutVid() {
+    var video: any = document.getElementById("myVideo") as HTMLElement;
+    console.log(video)
+
+    if (video.paused) video.play();
+    else video.pause();
   }
 }

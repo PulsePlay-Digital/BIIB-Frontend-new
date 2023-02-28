@@ -59,6 +59,30 @@
     padding-top: 88px;
   }
   
+  .floatingBtn {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    left: 100%;
+    rotate: 90deg;
+    display: flex;
+    flex-direction: row;
+    .first {
+      padding: 15px;
+      background-color: var(--primary-green);
+      border-radius: 0 0 10px 10px;
+      text-transform: uppercase;
+      color: var(--bs-white);
+    }
+    .second {
+      padding: 15px;
+      background-color: var(--primary-green);
+      border-radius: 0 0 10px 10px;
+      text-transform: uppercase;
+      color: var(--bs-white);
+
+    }
+  }
   
   .progress-container {
     width: 100%;
@@ -86,6 +110,6 @@
 
   @media only screen and (min-width: 300px) and (max-width: 574px) {
     .main {
-      padding-top: 74px;
+      padding-top: 78px;
     }
   }
