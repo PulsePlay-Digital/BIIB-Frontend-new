@@ -1,0 +1,75 @@
+.contactPage {
+    background-color: #F9F9F9;
+
+    .getInTouch {
+        .card {
+            .card-header {
+                i {
+                    font-size: 40px;
+                    color: var(--primary-green);
+                }
+            }
+
+            .card-body {
+                height: 84px;
+
+                .addressText {
+                    color: var(--primary-blue);
+                }
+            }
+        }
+    }
+
+    .contactDetail {
+        .card {
+            border: 1px solid var(--primary-blue);
+            .card-header {
+                background-color: transparent;
+                i {
+                    font-size: 32px;
+                    color: var(--primary-green);
+                }
+
+                h4 {
+                    font-size: 22px;
+                }
+
+                hr {
+                    width: 25%;
+                    margin: auto;
+                    border-radius: 40px;
+                    border: 3px solid var(--primary-green);
+                    opacity: 1;
+                }
+            }
+            .card-body {
+                a {
+                    color: var(--primary-blue);
+                    i {
+                        font-size: var(--font-20);
+                        color: var(--primary-green);
+                    }
+                }
+            }
+        }
+        .card:hover {
+            background-color: var(--primary-blue);
+            transition: all ease-in;
+            .card-header {
+                i {
+                    color: var(--primary-green);
+                }
+
+                h4 {
+                    font-size: 22px;
+                    color: var(--bs-white);
+                }
+            }
+            .card-body {
+                a {
+                    color: var(--bs-white);
+                }
+            }
+        }
+    }
+}
