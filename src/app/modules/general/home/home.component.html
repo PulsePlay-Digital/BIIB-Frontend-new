@@ -138,7 +138,7 @@
           <p class="mb-0 heading">Trusted By Top 100+ Companies</p>
         </div>
         <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-8 col-12 px-0">
-          <ngx-slick-carousel class="carousel mb-xl-0 mb-lg-0 mb-md-0 mb-sm-2 mb-5 partnerLogo"
+          <ngx-slick-carousel class="carousel mb-xl-0 mb-lg-0 mb-md-0 mb-sm-2 partnerLogo"
             #slickModal="slick-carousel" [config]="partnerConfig">
             <div ngxSlickItem *ngFor="let item of allHomeData?.Recruiter" class="slide px-2">
               <img class="card-img-top" [src]="imgPath + item?.featured_image" alt="logo">
@@ -153,7 +153,7 @@
   <!-- About Us -->
   <div class="aboutSection pb-xl-0 pb-lg-0 pb-md-0 pb-sm-0 pb-4">
     <div class="row m-0">
-      <div class="col-xl-6 col-lg-6 col-md-6 px-0 order-xl-1 order-lg-1 order-md-1 order-2 position-relative py-4">
+      <div class="col-xl-6 col-lg-6 col-md-6 px-0 order-xl-1 order-lg-1 order-md-1 order-2 position-relative">
         <div class="vidSection">
             <video muted loop id="myVideo">
                 <source src="./../../../../assets/imgs/homeImages/BIIB -(360p).mp4" type="video/mp4">
@@ -200,7 +200,7 @@
       </div> -->
       <div class="row">
         <div class="row m-0 pb-xl-3 pb-lg-3 pb-md-2 justify-content-start">
-          <div class="col-12 pb-2 text-center">
+          <div class="col-12 py-xl-2 py-lg-2 py-md-2 py-sm-2 pt-4 text-center">
             <h4 class="main-heading text-capitalize">Thriving for Excellence</h4>
           </div>
           <!-- <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-5">
@@ -409,13 +409,13 @@
   <div class="topBrass py-xl-5 py-lg-5 py-lg-4 py-md-4 py-sm-4 py-4">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 pb-2 text-center">
+        <div class="col-12 pb-2">
           <h6 class="main-heading text-capitalize">Leadership</h6>
         </div>
       </div>
       <div class="row">
         <div class="col-12 px-0">
-          <ngx-slick-carousel class="carousel topBrassCarousel my-xl-4 mb-lg-4 mb-md-4 mb-sm-4 mb-4"
+          <ngx-slick-carousel class="carousel courseSlider my-xl-4 mb-lg-4 mb-md-4 mb-sm-4 mb-4"
             #slickModal="slick-carousel" [config]="leadershipConfig">
             <div ngxSlickItem *ngFor="let item of allHomeData?.leadership; index as i;" class="slide px-2">
               <div class="card text-center">
