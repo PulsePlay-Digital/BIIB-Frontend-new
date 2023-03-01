@@ -93,7 +93,7 @@
     <div class="container">
       <div class="row pb-xl-3 pb-lg-3 pb-md-2 justify-content-start py-xl-3 m-0">
         <div class="col-12 pb-2">
-          <h4 class="main-heading text-capitalize">Courses offered</h4>
+          <h4 class="main-heading text-capitalize mb-0">Courses offered</h4>
         </div>
       </div>
       <div class="row py-xl-4 py-lg-4 py-md-4 py-sm-4 py-3">
@@ -198,16 +198,15 @@
       <!-- <div class="thrivingImg d-xl-block d-lg-block d-md-block d-none">
         <img src="./../../../../assets/imgs/homeImages/navHrDown.png">
       </div> -->
-      <div class="row">
-        <div class="row m-0 pb-xl-3 pb-lg-3 pb-md-2 justify-content-start">
-          <div class="col-12 py-xl-2 py-lg-2 py-md-2 py-sm-2 pt-4 text-center">
-            <h4 class="main-heading text-capitalize">Thriving for Excellence</h4>
-          </div>
-          <!-- <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-5">
-            <hr>
-          </div> -->
+      <div class="row m-0 pb-xl-3 pb-lg-3 pb-md-2 justify-content-start">
+        <div class="col-12 py-xl-2 py-lg-2 py-md-2 py-sm-2 pt-4 text-center">
+          <h4 class="main-heading text-capitalize">Thriving for Excellence</h4>
         </div>
-
+        <!-- <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-5">
+          <hr>
+        </div> -->
+      </div>
+      <div class="row m-0">
         <div class="col-xl-4 col-lg-4 col-md-4 my-3" *ngFor="let award of allHomeData?.Award;index as i;">
           <div class="card text-center py-4">
             <div class="card-body py-0">
@@ -408,12 +407,12 @@
   <!-- Leadership Section -->
   <div class="topBrass py-xl-5 py-lg-5 py-lg-4 py-md-4 py-sm-4 py-4">
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row m-0 justify-content-center">
         <div class="col-12 pb-2">
           <h6 class="main-heading text-capitalize">Leadership</h6>
         </div>
       </div>
-      <div class="row">
+      <div class="row m-0">
         <div class="col-12 px-0">
           <ngx-slick-carousel class="carousel courseSlider my-xl-4 mb-lg-4 mb-md-4 mb-sm-4 mb-4"
             #slickModal="slick-carousel" [config]="leadershipConfig">
@@ -451,12 +450,12 @@
       <img src="./../../../../assets/imgs/homeImages/navHrRight.png" alt="hr">
     </div>
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 text-center py-xl-5 py-lg-5 py-md-4 py-3">
+      <div class="row m-0 justify-content-center">
+        <div class="col-12 text-center py-xl-5 py-lg-5 py-md-4 py-4">
           <h6 class="main-heading text-capitalize mb-0">Events</h6>
         </div>
       </div>
-      <div class="row">
+      <div class="row m-0">
         <div class="col-xl-4 col-lg-4 col-md-4 my-2">
           <div class="card bg-transparent rounded-0 border-0">
             <div class="imageSection pb-2">
