@@ -40,12 +40,20 @@
     // background-image: url(./../../../assets/imgs/logoBG.png);
     background-repeat: no-repeat;
     // height: 108px;
+    .navbar-toggler {
+        img {
+            width: 50px;
+        }
+        .transitionHover {
+            transition-timing-function: ease-in;
+            transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+        }
+    }
     .offcanvas{
         background-color: var(--primary-blue);
         .offcanvas-body{
             .btn-close {
                 font-size: var(--font-24);
-                opacity: var(--opacity-1);
             }
             ul {
                 li {
@@ -191,5 +199,14 @@
         overflow-y: auto;
         max-height: 90vh;
         margin-top: 10px;
+    }
+    .bottomNav {
+        .offcanvas{
+            .offcanvas-body {
+                .btn-close {
+                    opacity: var(--opacity-1);
+                }
+            }
+        }
     }
 }

@@ -180,8 +180,15 @@ constructor(
   }
 
   ngAfterViewInit(): void {
-    // console.log(this.box);
-    // this.box.nativeElement.style.backgroundColor="red";
+    console.log(this.box);
+  }
+
+  over() {
+    this.box.nativeElement.src = "./../../../assets/imgs/hamburgerClose.png";
+    this.box.nativeElement.className = "transitionHover";
+  }
+  out() {
+    this.box.nativeElement.src = "./../../../assets/imgs/hamburgerDot.png";
   }
 
   @HostListener("window:scroll")
