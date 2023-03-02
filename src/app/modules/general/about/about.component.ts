@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { PLATFORM_ID } from '@angular/core';
 
 import { Quote } from './quote';
@@ -12,6 +12,34 @@ import { SeoService } from '../../../services/seo/seo.service';
 export class AboutComponent implements OnInit {
   quote: Quote;
   id: number;
+  sideMenu = [
+    {
+      id: 1,
+      name: "Why BIIB",
+      route: "/about/about-biib"
+    },
+    {
+      id: 2,
+      name:"History",
+      route: "/about/history"
+    },
+    {
+      id: 3,
+      name:"The University",
+      route:"/about/career",
+      href:"https://www.sbup.edu.in/"
+    },
+    {
+      id: 4,
+      name:"Top Brass",
+      route:"/about/leadership-team"
+    },
+    {
+      id:5,
+      name:"Careers",
+      route:"/about/career"     
+    }
+  ];
 
   constructor(
     private seoService: SeoService,

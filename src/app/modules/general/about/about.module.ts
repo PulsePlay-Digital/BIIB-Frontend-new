@@ -7,11 +7,13 @@ import { WhyBiibComponent } from './why-biib/why-biib.component';
 import { HistoryComponent } from './history/history.component';
 import { LeadershipTeamComponent } from './leadership-team/leadership-team.component';
 import { CareersComponent } from './careers/careers.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    AboutRoutingModule
+    AboutRoutingModule,
+    SharedModule
   ],
   exports: [
     AboutComponent

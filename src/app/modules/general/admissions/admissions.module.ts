@@ -9,6 +9,7 @@ import { ProcessComponent } from './process/process.component';
 import { EducationLoanComponent } from './education-loan/education-loan.component';
 import { FAQComponent } from './faq/faq.component';
 import { FeeStructureComponent } from './fee-structure/fee-structure.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FeeStructureComponent } from './fee-structure/fee-structure.component';
   ],
   imports: [
     CommonModule,
-    AdmissionsRoutingModule
+    AdmissionsRoutingModule,
+    SharedModule
   ],
   exports:[
     AdmissionsComponent

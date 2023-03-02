@@ -1,0 +1,9 @@
+<div class="sidebar">
+    <ul class="list-group rounded-0">
+        <li *ngFor="let item of sideMenu; index as i;"
+            class="list-group-item d-flex align-items-center justify-content-between pe-0"
+            routerLinkActive="active-link" routerLink="{{item?.route}}" role="button" tabindex="0">
+            <a class="text-decoration-none">{{item?.name}} </a> <span><i class="fa fa-arrow-right"></i></span>
+        </li>
+    </ul>
+</div>
