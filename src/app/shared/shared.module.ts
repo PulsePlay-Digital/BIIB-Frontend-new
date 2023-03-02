@@ -5,6 +5,7 @@ import { SnackbarAlertComponent } from './components/snackbar-alert/snackbar-ale
 import { LoaderComponent } from './components/loader/loader.component';
 import { MatModule } from '../material-module';
 import { CommonModule } from '@angular/common';
+import { HideTopHeaderDirective } from './directives/hide-top-header.directive';
 
 
 
@@ -12,13 +13,14 @@ import { CommonModule } from '@angular/common';
   declarations: [
     ScrollIndicatorDirective,
     SnackbarAlertComponent,
-    LoaderComponent
+    LoaderComponent,
+    HideTopHeaderDirective
   ],
   imports: [
     CommonModule,
     RouterModule,
     MatModule
   ],
-  exports: [ScrollIndicatorDirective, SnackbarAlertComponent, LoaderComponent]
+  exports: [ScrollIndicatorDirective, HideTopHeaderDirective, SnackbarAlertComponent, LoaderComponent]
 })
 export class SharedModule { }

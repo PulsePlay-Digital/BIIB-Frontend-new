@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { TokenInterceptor } from 'src/app/core/token.interceptor';
 import { DataService } from 'src/app/services/data.service';
 import { NotificationService } from 'src/app/services/notification.service';
@@ -12,6 +12,8 @@ import { MenuType } from './types';
 })
 export class HeaderComponent implements OnInit, AfterViewInit{
 @ViewChild('box', { static: true }) box : ElementRef | any;
+topHeaderPosition = 180;
+showHeader: boolean = true;
 constructor(
   public http: HttpClient, 
   private notify: NotificationService, 
@@ -180,5 +182,20 @@ constructor(
   ngAfterViewInit(): void {
     // console.log(this.box);
     // this.box.nativeElement.style.backgroundColor="red";
+  }
+
+  @HostListener("window:scroll")
+  checkScroll() {
+    const scrollPosition =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+console.log(scrollPosition)
+    if (scrollPosition <= this.topHeaderPosition) {
+      this.showHeader = true;
+    } else {
+      this.showHeader = false;
+    }
   }
 }
