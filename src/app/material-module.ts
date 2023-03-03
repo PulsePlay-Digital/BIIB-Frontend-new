@@ -41,8 +41,9 @@ import {CdkTreeModule} from '@angular/cdk/tree';
 // import {MatToolbarModule} from '@angular/material/toolbar';
 // import {MatTooltipModule} from '@angular/material/tooltip';
 // import {MatTreeModule} from '@angular/material/tree';
-// import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   exports: [
@@ -62,7 +63,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
     // MatChipsModule,
     // MatStepperModule,
     // MatDatepickerModule,
-    // MatDialogModule,
+    MatDialogModule,
     // MatDividerModule,
     // MatExpansionModule,
     // MatGridListModule,
@@ -90,7 +91,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
     OverlayModule,
     PortalModule,
     ScrollingModule,
-    // MatFormFieldModule
+    MatFormFieldModule
   ]
 })
 export class MatModule {}

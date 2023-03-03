@@ -180,7 +180,8 @@ constructor(
   }
 
   ngAfterViewInit(): void {
-    console.log(this.box);
+    // console.log(this.box);
+    this.box.nativeElement.src = "./../../../assets/imgs/hamburgerDot.png";
   }
 
   over() {
@@ -198,7 +199,7 @@ constructor(
       document.documentElement.scrollTop ||
       document.body.scrollTop ||
       0;
-console.log(scrollPosition)
+// console.log(scrollPosition)
     if (scrollPosition <= this.topHeaderPosition) {
       this.showHeader = true;
     } else {

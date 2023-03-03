@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { HideTopHeaderDirective } from './directives/hide-top-header.directive';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DialogPopupVideoComponent } from './components/dialog-popup-video/dialog-popup-video.component';
+import { HeroBannerComponent } from './components/hero-banner/hero-banner.component';
 
 
 
@@ -18,7 +19,8 @@ import { DialogPopupVideoComponent } from './components/dialog-popup-video/dialo
     LoaderComponent,
     HideTopHeaderDirective,
     SidebarComponent,
-    DialogPopupVideoComponent
+    DialogPopupVideoComponent,
+    HeroBannerComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { DialogPopupVideoComponent } from './components/dialog-popup-video/dialo
     SnackbarAlertComponent, 
     LoaderComponent, 
     SidebarComponent,
-    DialogPopupVideoComponent  
+    DialogPopupVideoComponent,
+    HeroBannerComponent  
   ]
 })
 export class SharedModule { }

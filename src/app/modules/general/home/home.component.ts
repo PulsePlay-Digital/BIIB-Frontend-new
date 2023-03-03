@@ -5,6 +5,8 @@ import { SeoService } from '../../../services/seo/seo.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NotificationService } from 'src/app/services/notification.service';
 import { Gallery } from 'ng-gallery';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogPopupVideoComponent } from 'src/app/shared/components/dialog-popup-video/dialog-popup-video.component';
 
 @Component({
   selector: 'app-home',
@@ -40,7 +42,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private fb: FormBuilder,
     private notification: NotificationService,
     private gallery: Gallery,
-    private elemRef: ElementRef
+    private elemRef: ElementRef,
+    private dialog : MatDialog
   ) {
     const content =
       'It applies Routing, Lazy loading and Progressive Web App (PWA)';
@@ -386,10 +389,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   playAboutVid() {
-    var video: any = document.getElementById("myVideo") as HTMLElement;
-    console.log(video)
+    const dialog = this.dialog.open(DialogPopupVideoComponent, {
+      width: '650px',
+    });
+    // var video: any = document.getElementById("myVideo") as HTMLElement;
+    // console.log(video)
 
-    if (video.paused) video.play();
-    else video.pause();
+    // if (video.paused) video.play();
+    // else video.pause();
   }
+
+  // videoDialog() {
+  //   const dialog = this.dialog.open(DialogPopupVideoComponent, {
+  //     width: '650px',
+  //   });
+  // }
 }

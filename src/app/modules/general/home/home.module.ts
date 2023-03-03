@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { GalleryModule } from 'ng-gallery';
 import { LightboxModule } from  'ng-gallery/lightbox';
+import { MatModule } from 'src/app/material-module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { LightboxModule } from  'ng-gallery/lightbox';
     CommonModule,
     HomeRoutingModule,
     GalleryModule,
-    LightboxModule
+    LightboxModule,
+    MatModule
   ]
 })
 export class HomeModule { }

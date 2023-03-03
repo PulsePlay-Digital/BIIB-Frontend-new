@@ -15,6 +15,11 @@ export class AboutComponent implements OnInit {
   sideMenu = [
     {
       id: 1,
+      name: "About BIIB",
+      route: "/about/about-biib"
+    },
+    {
+      id: 1,
       name: "Why BIIB",
       route: "/about/about-biib"
     },
@@ -25,7 +30,7 @@ export class AboutComponent implements OnInit {
     },
     {
       id: 3,
-      name:"The University",
+      name:"Sri Balaji University, Pune",
       route:"/about/career",
       href:"https://www.sbup.edu.in/"
     },
