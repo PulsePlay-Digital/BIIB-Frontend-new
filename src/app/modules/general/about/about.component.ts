@@ -21,7 +21,7 @@ export class AboutComponent implements OnInit {
     {
       id: 1,
       name: "Why BIIB",
-      route: "/about/about-biib"
+      route: "/about/why-biib"
     },
     {
       id: 2,

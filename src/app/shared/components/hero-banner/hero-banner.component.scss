@@ -43,13 +43,15 @@
     position: absolute;
     top: -185px;
     right: 0;
+    img {
+        width: 100px;
+    }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 574px) {
     .heroBanner {
         .bannerImg {
             height: 80vh;
-
             .bannerText {
                 .muted-text {
                     font-size: var(--font-28);
@@ -57,5 +59,26 @@
             }
         }
     }
-
+    .imgBg {
+        top: -70px;
+        img {
+            width: 32px;
+        }
+    }
+}
+@media only screen and (min-width: 575px) and (max-width: 767px) {
+    .imgBg {
+        top: -94px;
+        img {
+            width: 42px;
+        }
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .imgBg {
+        top: -118px;
+        img {
+            width: 60px;
+        }
+    }
 }

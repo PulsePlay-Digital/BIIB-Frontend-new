@@ -8,6 +8,7 @@ import { HistoryComponent } from './history/history.component';
 import { LeadershipTeamComponent } from './leadership-team/leadership-team.component';
 import { CareersComponent } from './careers/careers.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AboutBiibComponent } from './about-biib/about-biib.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     WhyBiibComponent,
     HistoryComponent,
     LeadershipTeamComponent,
-    CareersComponent
+    CareersComponent,
+    AboutBiibComponent
   ]
 })
 export class AboutModule { }

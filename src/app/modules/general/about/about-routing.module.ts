@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutBiibComponent } from './about-biib/about-biib.component';
 
 import { AboutComponent } from './about.component';
 import { CareersComponent } from './careers/careers.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   {
     path: '', component: AboutComponent,
     children: [
-      { path: 'about-biib', component: WhyBiibComponent },
+      { path: 'why-biib', component: WhyBiibComponent },
+      { path: 'about-biib', component: AboutBiibComponent },
       { path: 'history', component: HistoryComponent },
       { path: 'leadership-team', component: LeadershipTeamComponent },
       { path: 'career', component: CareersComponent }
