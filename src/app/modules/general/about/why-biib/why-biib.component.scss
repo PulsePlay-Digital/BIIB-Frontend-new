@@ -1,0 +1,19 @@
+.innerpage{
+    .inner-page-heading{
+        font-family: 'josefin-sans';
+        font-size: 36px;
+        line-height: 48px; 
+        color: var(--primary-blue);
+    }
+    .inner-page-text{
+        font-family: 'Roboto';
+        font-size: 18px;
+        line-height: 32px;
+        // color: var(--primary-blue);
+    }
+    .inner-list-heading{
+        line-height: 32px;
+        font-family: "Roboto";
+        color: var(--primary-blue);
+    }
+}
